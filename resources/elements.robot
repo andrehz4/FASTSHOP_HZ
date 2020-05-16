@@ -4,18 +4,11 @@ Resource         ../resources/setup_hz.robot
 # representação do padrão page object para Robot Framework
 
 *** Variables ***
-### login page
-${INPUT_EMAIL}                                  	  id:email
-${INPUT_PASSWORD}                               	  id:password
-${BUTTON_LOGIN}                                 	  id:loginButton
-${TEXTO_ESTA_PRESENTE}                          	  //span[contains(text(),'Rascunho')]
-${TEXTO_GUIA_DE_USUARIO_PRESENTE}               	  //span[contains(text(),'Guia de usuário')]
-													  
-### Criação de CTs	                                  
-${SPAN_CRIACAO_DE_CTS_ADICIONAR}                	   //div[@class='tcm-action-group']//span[@class='glyphicons glyphicons-plus']
-${H4_CRIACAO_DE_CTS_LABEL_ADICIONAR}            	   id:addTestCaseLabel
-${INPUT_CRIACAO_DE_CTS_NOME_TESTE_CASE}         	   id:testcasename
-${BUTTOM_CRIACAO_DE_CTS_SALVAR_OK}              	   //h4[@id='addTestCaseLabel']//..//..//button[contains(text(),'OK')]
-${SPAN_TRANSACOES}                              	   //crfo-panel[@title='Transações']//span[@class='glyphicon glyphicon-edit no-padding pull-right']
-${SPAN_VALIDACOES_DE_HOST}                      	   //crfo-panel[@title='Validações de Host']//span[@class='glyphicon glyphicon-edit no-padding pull-right']
-${SPAN_VALIDACOES_DE_HOST_TRANSACOES}           	   //div[@id='editTcHostvalidations']//h4[@class='ng-binding'][contains(text(),'transacoes')]/..//a[contains(text(),'Adicionar')]
+### Busca Produto
+${INPUT_BUSCA_PRODUTO}                                id:inpHeaderSearch
+${SPAN_LUPA_BUSCA_PRODUTO}                            id:btnHeaderSearch
+${H2_NOME_DA_TV}                                 	  //ul[@class='neemu-products-container nm-view-type-grid five-products priceapi-finish']//h2[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB')]
+${SPAN_ADICIONAR_AO_CARRINHO}                         //div[@itemprop='offers']//button//span[contains(text(),'Adicionar à sacola')]
+${A_BOTAO_VERDE_CONTINUAR}               	          //div[@class='warranty-wrapper']//a[contains(text(),'continuar')]
+${P_NOME_DA_TV}                                       //p[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB ')]
+${NOME_DA_TV}                                         Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB 

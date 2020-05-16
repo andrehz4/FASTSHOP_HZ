@@ -15,7 +15,6 @@ Start Session
 
 End Session
     Close Browser
-    Sleep   5
 
 End Test
     Capture Page Screenshot	
