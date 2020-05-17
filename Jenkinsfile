@@ -12,6 +12,7 @@ pipeline {
                 echo "Executando os testes de RPA"
                 sh 'robot -d ./logs tests/'
                 robot 'logs'
+                robot otherFiles: '**/*.png', outputPath: 'logs'
                 input(message: 'Terminou?', ok: 'Yes')
             }
         }
