@@ -1,3 +1,2 @@
 robotframework
-SeleniumLibrary
-robotframework-SeleniumLibrary
+robotframework-seleniumlibrary
