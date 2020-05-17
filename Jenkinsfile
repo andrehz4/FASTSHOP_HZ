@@ -15,7 +15,7 @@ pipeline {
                 input(message: 'Terminou?', ok: 'Yes')
             }
             post {
-                aways   {
+                always   {
                         robot otherFiles: '**/*.png', outputPath: 'logs'
                 }
             }
