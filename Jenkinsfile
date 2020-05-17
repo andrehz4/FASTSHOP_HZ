@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo "Executando os testes de RPA"
                 sh 'robot -d ./logs tests/'
-                robot 'log'
+                robot 'logs'
                 input(message: 'Terminou?', ok: 'Yes')
             }
         }
