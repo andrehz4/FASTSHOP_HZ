@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python' } }
+    agent { docker { image 'andrehz/python' } }
        stages {
            stage('Build') {
             steps {
@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo "Executando os testes de RPA"
                 sh 'robot -d ./logs tests/'
+                robot 'log'
                 input(message: 'Terminou?', ok: 'Yes')
             }
         }
