@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2rc1 (Python 3.8.1 on win32)" generated="20200516 17:17:57.862" rpa="false">
+<robot generator="Robot 3.2rc1 (Python 3.8.1 on win32)" generated="20200517 02:28:39.010" rpa="false">
 <suite id="s1" name="Tests" source="C:\ZUP_hz\tests">
 <suite id="s1-s1" name="ZUP" source="C:\ZUP_hz\tests\ZUP.robot">
 <kw name="Start Session" library="base" type="setup">
@@ -9,21 +9,21 @@
 <arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200516 17:17:58.124" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200516 17:17:58.124" endtime="20200516 17:17:59.160"></status>
+<msg timestamp="20200517 02:28:39.308" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200517 02:28:39.308" endtime="20200517 02:28:40.438"></status>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:17:59.160" endtime="20200516 17:17:59.162"></status>
+<status status="PASS" starttime="20200517 02:28:40.438" endtime="20200517 02:28:40.440"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200516 17:17:59.163" endtime="20200516 17:17:59.278"></status>
+<status status="PASS" starttime="20200517 02:28:40.440" endtime="20200517 02:28:40.554"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:17:58.123" endtime="20200516 17:17:59.278"></status>
+<status status="PASS" starttime="20200517 02:28:39.308" endtime="20200517 02:28:40.554"></status>
 </kw>
 <test id="s1-s1-t1" name="TV LG 4k OLED77C9PSB">
 <kw name="Busca, verificação e adição ao carrinho do item TV LG 4k OLED77C9PSB no site Megazine Luiza">
@@ -36,18 +36,18 @@
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200516 17:17:59.283" level="INFO">Opening url 'https://www.magazineluiza.com.br/'</msg>
-<status status="PASS" starttime="20200516 17:17:59.283" endtime="20200516 17:18:01.461"></status>
+<msg timestamp="20200517 02:28:40.557" level="INFO">Opening url 'https://www.magazineluiza.com.br/'</msg>
+<status status="PASS" starttime="20200517 02:28:40.556" endtime="20200517 02:28:42.364"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>Magazine Luiza | Pra você é Magalu!</arg>
 </arguments>
-<msg timestamp="20200516 17:18:01.531" level="INFO">Page title is 'Magazine Luiza | Pra você é Magalu!'.</msg>
-<status status="PASS" starttime="20200516 17:18:01.462" endtime="20200516 17:18:01.531"></status>
+<msg timestamp="20200517 02:28:42.772" level="INFO">Page title is 'Magazine Luiza | Pra você é Magalu!'.</msg>
+<status status="PASS" starttime="20200517 02:28:42.365" endtime="20200517 02:28:42.773"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:17:59.282" endtime="20200516 17:18:01.532"></status>
+<status status="PASS" starttime="20200517 02:28:40.556" endtime="20200517 02:28:42.773"></status>
 </kw>
 <kw name="Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista" library="setup_hz">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
@@ -55,7 +55,7 @@
 <arguments>
 <arg>${INPUT_BUSCA_PRODUTO}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:01.532" endtime="20200516 17:18:01.559"></status>
+<status status="PASS" starttime="20200517 02:28:42.774" endtime="20200517 02:28:43.468"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -63,45 +63,45 @@
 <arg>${INPUT_BUSCA_PRODUTO}</arg>
 <arg>${busca_produto}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:01.560" level="INFO">Typing text 'TV LG 4k OLED77C9PSB' into text field 'id:inpHeaderSearch'.</msg>
-<status status="PASS" starttime="20200516 17:18:01.559" endtime="20200516 17:18:01.919"></status>
+<msg timestamp="20200517 02:28:43.468" level="INFO">Typing text 'TV LG 4k OLED77C9PSB' into text field 'id:inpHeaderSearch'.</msg>
+<status status="PASS" starttime="20200517 02:28:43.468" endtime="20200517 02:28:44.481"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_LUPA_BUSCA_PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:01.919" level="INFO">Clicking element 'id:btnHeaderSearch'.</msg>
-<status status="PASS" starttime="20200516 17:18:01.919" endtime="20200516 17:18:03.368"></status>
+<msg timestamp="20200517 02:28:44.482" level="INFO">Clicking element 'id:btnHeaderSearch'.</msg>
+<status status="PASS" starttime="20200517 02:28:44.482" endtime="20200517 02:28:45.556"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${H2_NOME_DA_TV}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:03.368" endtime="20200516 17:18:08.701"></status>
+<status status="PASS" starttime="20200517 02:28:45.556" endtime="20200517 02:28:46.964"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${H2_NOME_DA_TV}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:08.701" endtime="20200516 17:18:08.714"></status>
+<status status="PASS" starttime="20200517 02:28:46.965" endtime="20200517 02:28:47.165"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200516 17:18:09.185" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200516 17:18:08.714" endtime="20200516 17:18:09.185"></status>
+<msg timestamp="20200517 02:28:47.613" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200517 02:28:47.165" endtime="20200517 02:28:47.613"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${H2_NOME_DA_TV}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:09.185" level="INFO">Clicking element '//ul[@class='neemu-products-container nm-view-type-grid five-products priceapi-finish']//h2[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB')]'.</msg>
-<status status="PASS" starttime="20200516 17:18:09.185" endtime="20200516 17:18:11.461"></status>
+<msg timestamp="20200517 02:28:47.613" level="INFO">Clicking element '//ul[@class='neemu-products-container nm-view-type-grid five-products priceapi-finish']//h2[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB')]'.</msg>
+<status status="PASS" starttime="20200517 02:28:47.613" endtime="20200517 02:28:49.177"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:18:01.532" endtime="20200516 17:18:11.462"></status>
+<status status="PASS" starttime="20200517 02:28:42.773" endtime="20200517 02:28:49.178"></status>
 </kw>
 <kw name="Então o produto o é adicionado e verificado que está no carrinho" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -109,55 +109,55 @@
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:11.462" endtime="20200516 17:18:12.256"></status>
+<status status="PASS" starttime="20200517 02:28:49.178" endtime="20200517 02:28:49.693"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200516 17:18:12.740" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200516 17:18:12.256" endtime="20200516 17:18:12.741"></status>
+<msg timestamp="20200517 02:28:50.573" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200517 02:28:49.693" endtime="20200517 02:28:50.573"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:12.741" level="INFO">Clicking element '//div[@itemprop='offers']//button//span[contains(text(),'Adicionar à sacola')]'.</msg>
-<status status="PASS" starttime="20200516 17:18:12.741" endtime="20200516 17:18:13.222"></status>
+<msg timestamp="20200517 02:28:50.574" level="INFO">Clicking element '//div[@itemprop='offers']//button//span[contains(text(),'Adicionar à sacola')]'.</msg>
+<status status="PASS" starttime="20200517 02:28:50.573" endtime="20200517 02:28:51.558"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${A_BOTAO_VERDE_CONTINUAR}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:13.222" endtime="20200516 17:18:13.573"></status>
+<status status="PASS" starttime="20200517 02:28:51.559" endtime="20200517 02:28:51.775"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200516 17:18:14.077" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200516 17:18:13.573" endtime="20200516 17:18:14.077"></status>
+<msg timestamp="20200517 02:28:52.220" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200517 02:28:51.775" endtime="20200517 02:28:52.220"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${A_BOTAO_VERDE_CONTINUAR}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:14.078" level="INFO">Clicking element '//div[@class='warranty-wrapper']//a[contains(text(),'continuar')]'.</msg>
-<status status="PASS" starttime="20200516 17:18:14.077" endtime="20200516 17:18:14.260"></status>
+<msg timestamp="20200517 02:28:52.221" level="INFO">Clicking element '//div[@class='warranty-wrapper']//a[contains(text(),'continuar')]'.</msg>
+<status status="PASS" starttime="20200517 02:28:52.220" endtime="20200517 02:28:52.326"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${P_NOME_DA_TV}</arg>
 </arguments>
-<status status="PASS" starttime="20200516 17:18:14.260" endtime="20200516 17:18:19.088"></status>
+<status status="PASS" starttime="20200517 02:28:52.326" endtime="20200517 02:28:55.931"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>Sacola de compras - Magazine Luiza</arg>
 </arguments>
-<msg timestamp="20200516 17:18:19.104" level="INFO">Page title is 'Sacola de compras - Magazine Luiza'.</msg>
-<status status="PASS" starttime="20200516 17:18:19.088" endtime="20200516 17:18:19.104"></status>
+<msg timestamp="20200517 02:28:56.171" level="INFO">Page title is 'Sacola de compras - Magazine Luiza'.</msg>
+<status status="PASS" starttime="20200517 02:28:55.931" endtime="20200517 02:28:56.171"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -165,50 +165,50 @@
 <arg>${P_NOME_DA_TV}</arg>
 <arg>${NOME_DA_TV}</arg>
 </arguments>
-<msg timestamp="20200516 17:18:19.105" level="INFO">Verifying element '//p[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB ')]' contains exact text 'Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB'.</msg>
-<status status="PASS" starttime="20200516 17:18:19.104" endtime="20200516 17:18:19.124"></status>
+<msg timestamp="20200517 02:28:56.172" level="INFO">Verifying element '//p[contains(text(),'Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB ')]' contains exact text 'Smart TV 4K OLED 77” LG OLED77C9PSB Wi-Fi - Bluetooth HDR Inteligência Artificial 4 HDMI 3 USB'.</msg>
+<status status="PASS" starttime="20200517 02:28:56.171" endtime="20200517 02:28:56.312"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200516 17:18:19.486" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200516 17:18:19.124" endtime="20200516 17:18:19.486"></status>
+<msg timestamp="20200517 02:28:56.775" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200517 02:28:56.312" endtime="20200517 02:28:56.775"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:18:11.462" endtime="20200516 17:18:19.486"></status>
+<status status="PASS" starttime="20200517 02:28:49.178" endtime="20200517 02:28:56.775"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:17:59.281" endtime="20200516 17:18:19.486"></status>
+<status status="PASS" starttime="20200517 02:28:40.556" endtime="20200517 02:28:56.775"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200516 17:18:19.975" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200516 17:18:19.487" endtime="20200516 17:18:19.976"></status>
+<msg timestamp="20200517 02:28:57.190" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200517 02:28:56.776" endtime="20200517 02:28:57.190"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:18:19.487" endtime="20200516 17:18:19.976"></status>
+<status status="PASS" starttime="20200517 02:28:56.776" endtime="20200517 02:28:57.190"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:17:59.279" endtime="20200516 17:18:19.976" critical="yes"></status>
+<status status="PASS" starttime="20200517 02:28:40.554" endtime="20200517 02:28:57.191" critical="yes"></status>
 </test>
 <kw name="End Session" library="base" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200516 17:18:19.979" endtime="20200516 17:18:22.155"></status>
+<status status="PASS" starttime="20200517 02:28:57.193" endtime="20200517 02:28:59.379"></status>
 </kw>
-<status status="PASS" starttime="20200516 17:18:19.979" endtime="20200516 17:18:22.155"></status>
+<status status="PASS" starttime="20200517 02:28:57.193" endtime="20200517 02:28:59.379"></status>
 </kw>
 <doc>ZUP - AUTOMAÇÃO WEB
 Utilizando as ferramentas que preferir crie um teste automatizado que faça o fluxo de ponta
 a ponta de um cliente que:
-
-
-
+1- Entre em um grande portal de comércio online
+(Exemplo: Americanas, Submarino, Magazine Luiza)
+2- Faça uma busca por um produto
 3- Valide o retorno da busca
 4- Escolha um produto na lista
 5- Adicione o carrinho
 6- Valide o produto no carrinho
 Para a criação dos cenários de testes devem ser considerados casos de sucesso e fluxos
 alternativos</doc>
-<status status="PASS" starttime="20200516 17:17:57.892" endtime="20200516 17:18:22.155"></status>
+<status status="PASS" starttime="20200517 02:28:39.042" endtime="20200517 02:28:59.379"></status>
 </suite>
-<status status="PASS" starttime="20200516 17:17:57.864" endtime="20200516 17:18:22.160"></status>
+<status status="PASS" starttime="20200517 02:28:39.012" endtime="20200517 02:28:59.385"></status>
 </suite>
 <statistics>
 <total>
