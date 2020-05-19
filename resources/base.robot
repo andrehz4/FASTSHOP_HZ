@@ -5,7 +5,7 @@ Resource    elements.robot
 Resource    setup_hz.robot
 
 *** Variables ***
-${BASE_URL}     https://www.magazineluiza.com.br/
+${BASE_URL}     http://webapp2-qa.fastshop.com.br/
 
 *** Keywords ***
 Start Session

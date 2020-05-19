@@ -1,7 +1,6 @@
 *** Settings ***
 
 Resource         ../resources/setup_hz.robot
-# representação do padrão page object para Robot Framework
 
 *** Variables ***
 ### Busca Produto

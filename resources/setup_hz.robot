@@ -2,10 +2,10 @@
 Resource    base.robot
 
 *** Keywords ***
-###################### Magazine Luiza
+###################### FASTSHOP - INSERIR PRODUTO NO CARRINHO
 Dado que acesso e verifico que estou no site Magazine Luiza
-    Go To               ${BASE_URL}
-    Title Should Be     Magazine Luiza | Pra você é Magalu! 
+    Go To               ${BASE_URL}/web/p/d/${busca_produto}
+    Title Should Be     Bem-vindo à Fast Shop
 
 Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
     Wait Until Element Is Enabled       ${INPUT_BUSCA_PRODUTO}
