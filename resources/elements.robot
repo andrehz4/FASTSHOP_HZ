@@ -19,6 +19,7 @@ ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}              (//button[contains(text(),
 ${BUTTON_CONTINUAR_VERDE_SERVICOS}                    (//button[contains(text(), 'Continuar')])[last()]  
 ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}                   (//button[contains(text(), 'Continuar')])[last()] 
 ${DIV_DESCRICAO_DO_PAGAMENTO}                         //div[@class='invoice-description']
+${CARRINHO_URL}                                       http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho  
 
 
 ### Login

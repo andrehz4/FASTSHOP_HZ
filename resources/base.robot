@@ -10,7 +10,7 @@ ${BASE_URL}     http://webapp2-qa.fastshop.com.br/
 
 *** Keywords ***
 Start Session
-    Open Browser                    about:blank         headlesschrome
+    Open Browser                    about:blank         chrome
     Set Selenium Implicit Wait      10
     Maximize Browser Window
     #Start Video Recording
