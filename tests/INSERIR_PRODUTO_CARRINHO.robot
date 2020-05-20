@@ -16,10 +16,21 @@ Test Teardown    End Test
 
 
 *** Test Cases ***
-INSERIR UM PRODUTO NO CARRINHO
+INSERIR UM PRODUTO NO CARRINHO SEM SERVIÇO
     [Template]                  Busca, verificação e adição ao carrinho de um item no site da FASTSHOP
     #CPF                        #Senha                      #Produto                                                       
     941.861.830-31              12345678                    AEMWHJ2BZACNZB  		                    
+
+EXCLUIR UM PRODUTO NO CARRINHO
+    [Template]                  Excluir produto sem serviço no carrinho quando existe só um produto
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    AEMWHJ2BZACNZB  		                    
+
+CONCLUIR UMA COMPRA
+    [Template]                  Busca, verificação e adição no carrinho e conclusão da compra de um item sem serviço no site da FASTSHOP
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    AEMWHJ2BZACNZB  		                    
+
 
 #INSERIR UM PRODUTO NO CARRINHO COM SERVIÇO
 #    [Template]                  Busca, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço
@@ -35,7 +46,23 @@ Busca, verificação e adição ao carrinho de um item no site da FASTSHOP
     Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
     E e logo no site com o CPF ${cpf} e a senha ${senha}
     Então o produto ${busca_produto} é adicionado e verificado que está no carrinho 
+
+Excluir produto sem serviço no carrinho quando existe só um produto
+    [Arguments]                 ${cpf}                  ${senha}                    ${busca_produto}    
     
+    Dado que acesso e verifico que estou no site da FASTSHOP
+    Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
+    E e logo no site com o CPF ${cpf} e a senha ${senha}
+    Então o produto ${busca_produto} é adicionado e verificado e excluido do carrinho, ficando vazio
+
+Busca, verificação e adição no carrinho e conclusão da compra de um item sem serviço no site da FASTSHOP
+    [Arguments]                 ${cpf}                  ${senha}                    ${busca_produto}                   
+    
+    Dado que acesso e verifico que estou no site da FASTSHOP
+    Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
+    E e logo no site com o CPF ${cpf} e a senha ${senha}
+    Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada 
+
 Busca, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço
     [Arguments]                 ${cpf}                  ${senha}                    ${busca_produto}                   
 

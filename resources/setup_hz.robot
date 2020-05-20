@@ -3,9 +3,26 @@ Resource    base.robot
 
 *** Keywords ***
 ###################### FASTSHOP - INSERIR PRODUTO NO CARRINHO
+Então o produto ${busca_produto} é adicionado e verificado que está no carrinho 
+    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            10 
+    ${PRODUTO}=                         Get Text                                    ${DIV_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}   
+    Capture Page Screenshot
+
+###################### FASTSHOP - EXCLUIR UM PRODUTO DO CARRINHO
+Então o produto ${busca_produto} é adicionado e verificado e excluido do carrinho, ficando vazio
+    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            10
+    Set Focus To Element                ${DIV_EXCLUIR_PRODUTO}
+    Capture Page Screenshot
+    Click Element                       ${DIV_EXCLUIR_PRODUTO}
+    Wait Until Element Is Visible       ${P_CARRINHO_VAZIO}                         10  
+    Capture Page Screenshot
+
+###################### FASTSHOP - CONCLUIR A COMPRA SEM SERVIÇO
 Dado que acesso e verifico que estou no site da FASTSHOP
+    Delete All Cookies
     Go To                               ${BASE_URL}
-    Title Should Be                     Bem-vindo à Fast Shop
 
 Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
     Go To                               ${BASE_URL}web/p/d/${busca_produto}/teste
@@ -27,7 +44,7 @@ E e logo no site com o CPF ${cpf} e a senha ${senha}
     Sleep                               5
     Go To                               ${CARRINHO_URL}   
 
-Então o produto ${busca_produto} é adicionado e verificado que está no carrinho 
+Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada
     Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            10
     Set Focus To Element                ${BUTTON_CONTINUAR_COMPRA_VERDE}
     Capture Page Screenshot
@@ -56,8 +73,10 @@ Então o produto ${busca_produto} é adicionado e verificado que está no carrin
     Wait Until Element Is Visible       ${DIV_DESCRICAO_DO_PAGAMENTO}                10
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}
     Capture Page Screenshot
-    Click Element                       ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}                                
-
+    Click Element                       ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}  
+    Wait Until Element Is Enabled	    ${DIV_COMPRA_CONCLUIDA}                      15       
+    Capture Page Screenshot    
+                              
 ###################### FASTSHOP - INSERIR PRODUTO NO CARRINHO COM SEGURO
 E adiciono um serviço
     Wait Until Element Is Visible       ${BUTTON_SELECIONAR_SERVICO}                 10
@@ -70,6 +89,8 @@ E adiciono um serviço
     #Select Radio Button                 period                                        0          
     Click Element                       //button[contains(text(), 'APLICAR')]   
     #//label[@for='${PRODUTO}_THEFT']//..      
+
+
 
 #Login com sucesso
 Quando logo com o usuário ${usuario_existente} e insiro a sua senha válida ${senha_valida}
@@ -86,7 +107,6 @@ Então o site me direciona para a tela inicial e exibe meu nome no canto superio
 
 #Login inválido
 Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha} 
-    Delete All Cookies
     Go To                                   ${BASE_URL}web/login
     Input Text                              ${ID_LOGIN_CPF}                        ${usuario}
     Input Text                              ${ID_LOGIN_SENHA}                      ${senha}

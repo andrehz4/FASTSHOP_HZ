@@ -20,6 +20,10 @@ ${BUTTON_CONTINUAR_VERDE_SERVICOS}                    (//button[contains(text(),
 ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}                   (//button[contains(text(), 'Continuar')])[last()] 
 ${DIV_DESCRICAO_DO_PAGAMENTO}                         //div[@class='invoice-description']
 ${CARRINHO_URL}                                       http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho  
+${DIV_COMPRA_CONCLUIDA}                               //div[@class='label-title'] 
+${DIV_EXCLUIR_PRODUTO}                                //div[@class='remove']  
+${P_CARRINHO_VAZIO}                                   //p[@class='alert-text'][contains(text(), 'Seu carrinho está vazio.')]
+${DIV_NOME_DO_PRODUTO}                                //div[@class='row']//span[1]
 
 
 ### Login
