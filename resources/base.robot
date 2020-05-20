@@ -13,8 +13,8 @@ Start Session
     Open Browser                    about:blank         chrome
     Set Selenium Implicit Wait      10
     Maximize Browser Window
-    Start Video Recording
-    Start Gif Recording
+    #Start Video Recording
+    #Start Gif Recording
 
 
 
@@ -23,5 +23,6 @@ End Session
 
 End Test
     Capture Page Screenshot	
-    Stop Gif Recording
-    Stop Video Recording
+    #Stop Video Recording
+    #Stop Gif Recording
+    

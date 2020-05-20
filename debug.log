@@ -176,3 +176,15 @@
 [0519/222513.268:ERROR:exception_snapshot_win.cc(98)] thread ID 20980 not found in process
 [0519/222513.277:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0519/222513.277:ERROR:exception_snapshot_win.cc(98)] thread ID 21448 not found in process
+[0519/231018.659:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231018.663:ERROR:exception_snapshot_win.cc(98)] thread ID 21740 not found in process
+[0519/231018.685:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231018.686:ERROR:exception_snapshot_win.cc(98)] thread ID 21852 not found in process
+[0519/231341.695:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231341.696:ERROR:exception_snapshot_win.cc(98)] thread ID 19244 not found in process
+[0519/231341.706:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231341.706:ERROR:exception_snapshot_win.cc(98)] thread ID 20688 not found in process
+[0519/231633.356:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231633.360:ERROR:exception_snapshot_win.cc(98)] thread ID 22512 not found in process
+[0519/231633.414:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0519/231633.414:ERROR:exception_snapshot_win.cc(98)] thread ID 21880 not found in process

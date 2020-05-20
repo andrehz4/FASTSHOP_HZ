@@ -1,2 +1,3 @@
 robotframework
 robotframework-seleniumlibrary
+Pip install --upgrade robotframework-screencaplibrary
