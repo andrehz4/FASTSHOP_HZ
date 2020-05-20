@@ -5,6 +5,7 @@ Resource         ../resources/setup_hz.robot
 ### Busca Produto
 ${INPUT_BUSCA_PRODUTO}                                id:inpHeaderSearch
 ${SPAN_LUPA_BUSCA_PRODUTO}                            id:btnHeaderSearch
+${BUTTON_SELECIONAR_SERVICO}                          //button[contains(text(), 'Selecionar')]
 ${H2_NOME_DO_PRODUTO}                             	  //h2[@class='product-detail-partnumber']
 ${H1_NOME_DO_PRODUTO}                                 //h2[@class='product-detail-partnumber']//..//h1
 ${A_ADICIONAR_NOVO_ENDERECO}                          //a[@class='btn btn-new-address']  
@@ -19,8 +20,11 @@ ${BUTTON_CONTINUAR_VERDE_SERVICOS}                    (//button[contains(text(),
 ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}                   (//button[contains(text(), 'Continuar')])[last()] 
 ${DIV_DESCRICAO_DO_PAGAMENTO}                         //div[@class='invoice-description']
 
+
 ### Login
 ${ID_LOGIN_CPF}                                       id:document
 ${ID_LOGIN_SENHA}                                     id:password
-${BUTTON_CONFIRMAR_VERDE}                             //button[@class='btn btn-green']  
-${CARRINHO_URL}                                       http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho  
+${BUTTON_CONFIRMAR_VERDE}                             //button[@class='btn btn-green']   
+${A_NOME_CLIENTE_LOGADO}                              //a[contains(text(), 'Teste')] 
+${P_MENSSAGEM_ERRO_LOGIN}                             //p[@class='err-msg']
+${DIV_CPF_INVALIDO}                                   //div[@class='invalid-feedback']
