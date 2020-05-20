@@ -77,6 +77,7 @@ Quando logo com o usuário ${usuario_existente} e insiro a sua senha válida ${s
     Input Text                              ${ID_LOGIN_CPF}                        ${usuario_existente}
     Input Text                              ${ID_LOGIN_SENHA}                      ${senha_valida}
     Click Element                           ${BUTTON_CONFIRMAR_VERDE}
+    Capture Page Screenshot
 
 Então o site me direciona para a tela inicial e exibe meu nome no canto superior direito ${nome_cliente_logado}  
     Should Contain                          ${A_NOME_CLIENTE_LOGADO}                ${nome_cliente_logado}  
@@ -90,6 +91,7 @@ Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}
     Input Text                              ${ID_LOGIN_CPF}                        ${usuario}
     Input Text                              ${ID_LOGIN_SENHA}                      ${senha}
     Click Element                           ${BUTTON_CONFIRMAR_VERDE}
+    Capture Page Screenshot
 
 Entao deve ser apresentada a mensagem que os dados são inválidos ${mensagem_login_invalido} 
     Element Text Should Be                  ${P_MENSSAGEM_ERRO_LOGIN}              ${mensagem_login_invalido}
