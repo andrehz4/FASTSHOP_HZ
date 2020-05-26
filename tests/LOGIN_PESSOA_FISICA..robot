@@ -14,7 +14,7 @@ Test Teardown    End Test
 LOGIN COM SUCESSO
     [Template]                  Login com sucesso
     #CPF                        #Senha                      #Nome                                                       
-    941.861.830-31              12345678                    Teste  		                    
+    34611974839                 teste                       Andre                    
 
 LOGIN COM DADOS INVÁLIDOS
     [Template]                  Realizar login com dados inválidos
@@ -29,6 +29,7 @@ LOGIN COM CPF INVÁLIDO
     941.861.830-36              12345678                    Informe um CPF válido 
     
 LOGIN COM CAMPOS EM BRANCO
+    [tags]              Prioridade alta
     [Template]                  Realizar login com CPF inválido   
     #CPF                        #Senha                      #Mensagem de falha     
     ${EMPTY}                    12234344                    Campo obrigatório  

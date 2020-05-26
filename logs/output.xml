@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2rc1 (Python 3.8.1 on win32)" generated="20200520 16:36:31.710" rpa="false">
+<robot generator="Robot 3.2rc1 (Python 3.8.1 on win32)" generated="20200520 21:56:31.929" rpa="false">
 <suite id="s1" name="Tests" source="C:\FastShop_hz\tests">
 <suite id="s1-s1" name="INSERIR PRODUTO CARRINHO" source="C:\FastShop_hz\tests\INSERIR_PRODUTO_CARRINHO.robot">
 <kw name="Start Session" library="base" type="setup">
@@ -9,21 +9,31 @@
 <arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200520 16:36:32.308" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200520 16:36:32.307" endtime="20200520 16:36:33.386"></status>
+<msg timestamp="20200520 21:56:33.137" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200520 21:56:33.137" endtime="20200520 21:56:34.401"></status>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:33.386" endtime="20200520 16:36:33.387"></status>
+<status status="PASS" starttime="20200520 21:56:34.401" endtime="20200520 21:56:34.402"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200520 16:36:33.388" endtime="20200520 16:36:33.500"></status>
+<status status="PASS" starttime="20200520 21:56:34.403" endtime="20200520 21:56:34.517"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:32.307" endtime="20200520 16:36:33.501"></status>
+<kw name="Start Video Recording" library="ScreenCapLibrary">
+<doc>Starts the recording of a video in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Video Recording` keyword.</doc>
+<status status="PASS" starttime="20200520 21:56:34.517" endtime="20200520 21:56:34.523"></status>
+</kw>
+<kw name="Start Gif Recording" library="ScreenCapLibrary">
+<doc>Starts the recording of a GIF in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
+<status status="PASS" starttime="20200520 21:56:34.523" endtime="20200520 21:56:34.525"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:56:33.137" endtime="20200520 21:56:34.525"></status>
 </kw>
 <test id="s1-s1-t1" name="INSERIR UM PRODUTO NO CARRINHO SEM SERVIÇO">
 <kw name="Busca, verificação e adição ao carrinho de um item no site da FASTSHOP">
@@ -35,17 +45,17 @@
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:36:33.503" endtime="20200520 16:36:33.508"></status>
+<status status="PASS" starttime="20200520 21:56:34.528" endtime="20200520 21:56:34.536"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:33.508" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:36:33.508" endtime="20200520 16:36:36.049"></status>
+<msg timestamp="20200520 21:56:34.536" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:56:34.536" endtime="20200520 21:56:43.392"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:33.503" endtime="20200520 16:36:36.049"></status>
+<status status="PASS" starttime="20200520 21:56:34.527" endtime="20200520 21:56:43.392"></status>
 </kw>
 <kw name="Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -53,16 +63,16 @@
 <arguments>
 <arg>${BASE_URL}web/p/d/${busca_produto}/teste</arg>
 </arguments>
-<msg timestamp="20200520 16:36:36.050" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
-<status status="PASS" starttime="20200520 16:36:36.050" endtime="20200520 16:36:39.220"></status>
+<msg timestamp="20200520 21:56:43.393" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
+<status status="PASS" starttime="20200520 21:56:43.393" endtime="20200520 21:56:45.557"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
-<arg>10</arg>
+<arg>20</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:39.221" endtime="20200520 16:36:40.011"></status>
+<status status="PASS" starttime="20200520 21:56:45.558" endtime="20200520 21:56:47.042"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -72,24 +82,24 @@
 <assign>
 <var>${PRODUTO}</var>
 </assign>
-<msg timestamp="20200520 16:36:40.039" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:40.012" endtime="20200520 16:36:40.039"></status>
+<msg timestamp="20200520 21:56:47.082" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:56:47.043" endtime="20200520 21:56:47.083"></status>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <doc>Makes a variable available globally in all tests and suites.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:40.040" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:40.040" endtime="20200520 16:36:40.040"></status>
+<msg timestamp="20200520 21:56:47.084" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:56:47.083" endtime="20200520 21:56:47.084"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:40.041" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:40.040" endtime="20200520 16:36:40.041"></status>
+<msg timestamp="20200520 21:56:47.084" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:56:47.084" endtime="20200520 21:56:47.084"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -97,30 +107,30 @@
 <arg>${H2_NOME_DO_PRODUTO}</arg>
 <arg>${busca_produto}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:40.041" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
-<status status="PASS" starttime="20200520 16:36:40.041" endtime="20200520 16:36:40.066"></status>
+<msg timestamp="20200520 21:56:47.085" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
+<status status="PASS" starttime="20200520 21:56:47.084" endtime="20200520 21:56:47.135"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:40.066" endtime="20200520 16:36:40.077"></status>
+<status status="PASS" starttime="20200520 21:56:47.135" endtime="20200520 21:56:47.602"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:40.078" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
-<status status="PASS" starttime="20200520 16:36:40.077" endtime="20200520 16:36:40.307"></status>
+<msg timestamp="20200520 21:56:47.602" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
+<status status="PASS" starttime="20200520 21:56:47.602" endtime="20200520 21:56:48.069"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:41.026" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-313.png"&gt;&lt;img src="selenium-screenshot-313.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:40.308" endtime="20200520 16:36:41.026"></status>
+<msg timestamp="20200520 21:56:48.501" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:48.070" endtime="20200520 21:56:48.501"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:36.049" endtime="20200520 16:36:41.027"></status>
+<status status="PASS" starttime="20200520 21:56:43.392" endtime="20200520 21:56:48.502"></status>
 </kw>
 <kw name="E e logo no site com o CPF ${cpf} e a senha ${senha}" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -129,7 +139,7 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:41.028" endtime="20200520 16:36:41.059"></status>
+<status status="PASS" starttime="20200520 21:56:48.503" endtime="20200520 21:56:48.534"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -137,8 +147,8 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:41.060" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:36:41.059" endtime="20200520 16:36:41.273"></status>
+<msg timestamp="20200520 21:56:48.535" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:56:48.534" endtime="20200520 21:56:48.750"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -146,39 +156,39 @@
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:41.274" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:36:41.274" endtime="20200520 16:36:41.441"></status>
+<msg timestamp="20200520 21:56:48.751" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:56:48.751" endtime="20200520 21:56:48.897"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:41.442" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:36:41.442" endtime="20200520 16:36:41.540"></status>
+<msg timestamp="20200520 21:56:48.898" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:56:48.897" endtime="20200520 21:56:48.982"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:41.987" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-314.png"&gt;&lt;img src="selenium-screenshot-314.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:41.540" endtime="20200520 16:36:41.987"></status>
+<msg timestamp="20200520 21:56:49.431" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:48.983" endtime="20200520 21:56:49.431"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>5</arg>
 </arguments>
-<msg timestamp="20200520 16:36:46.987" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20200520 16:36:41.987" endtime="20200520 16:36:46.987"></status>
+<msg timestamp="20200520 21:56:54.432" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200520 21:56:49.431" endtime="20200520 21:56:54.432"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${CARRINHO_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:46.988" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
-<status status="PASS" starttime="20200520 16:36:46.988" endtime="20200520 16:36:47.912"></status>
+<msg timestamp="20200520 21:56:54.433" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
+<status status="PASS" starttime="20200520 21:56:54.433" endtime="20200520 21:56:55.382"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:41.027" endtime="20200520 16:36:47.913"></status>
+<status status="PASS" starttime="20200520 21:56:48.502" endtime="20200520 21:56:55.383"></status>
 </kw>
 <kw name="Então o produto ${busca_produto} é adicionado e verificado que está no carrinho" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -187,7 +197,7 @@
 <arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:47.914" endtime="20200520 16:36:49.270"></status>
+<status status="PASS" starttime="20200520 21:56:55.384" endtime="20200520 21:56:57.538"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -197,43 +207,57 @@
 <assign>
 <var>${PRODUTO}</var>
 </assign>
-<msg timestamp="20200520 16:36:49.293" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
-<status status="PASS" starttime="20200520 16:36:49.270" endtime="20200520 16:36:49.293"></status>
+<msg timestamp="20200520 21:56:57.569" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
+<status status="PASS" starttime="20200520 21:56:57.539" endtime="20200520 21:56:57.569"></status>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <doc>Makes a variable available globally in all tests and suites.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:49.294" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
-<status status="PASS" starttime="20200520 16:36:49.293" endtime="20200520 16:36:49.294"></status>
+<msg timestamp="20200520 21:56:57.570" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
+<status status="PASS" starttime="20200520 21:56:57.570" endtime="20200520 21:56:57.570"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:49.294" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
-<status status="PASS" starttime="20200520 16:36:49.294" endtime="20200520 16:36:49.294"></status>
+<msg timestamp="20200520 21:56:57.571" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e ...</msg>
+<status status="PASS" starttime="20200520 21:56:57.571" endtime="20200520 21:56:57.571"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:49.661" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-315.png"&gt;&lt;img src="selenium-screenshot-315.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:49.294" endtime="20200520 16:36:49.661"></status>
+<msg timestamp="20200520 21:56:58.149" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:57.571" endtime="20200520 21:56:58.149"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:47.913" endtime="20200520 16:36:49.662"></status>
+<status status="PASS" starttime="20200520 21:56:55.383" endtime="20200520 21:56:58.149"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:33.502" endtime="20200520 16:36:49.662"></status>
+<status status="PASS" starttime="20200520 21:56:34.527" endtime="20200520 21:56:58.149"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:50.039" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-316.png"&gt;&lt;img src="selenium-screenshot-316.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:49.663" endtime="20200520 16:36:50.039"></status>
+<msg timestamp="20200520 21:56:58.514" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:58.151" endtime="20200520 21:56:58.514"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:49.663" endtime="20200520 16:36:50.039"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:56:59.517" level="INFO" html="yes">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:58.514" endtime="20200520 21:56:59.517"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:33.501" endtime="20200520 16:36:50.040" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:57:10.806" level="INFO" html="yes">&lt;a href="screenshot_3.gif"&gt;&lt;img src="screenshot_3.gif" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:56:59.517" endtime="20200520 21:57:10.880"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:56:58.150" endtime="20200520 21:57:10.881"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:56:34.526" endtime="20200520 21:57:10.881" critical="yes"></status>
 </test>
 <test id="s1-s1-t2" name="EXCLUIR UM PRODUTO NO CARRINHO">
 <kw name="Excluir produto sem serviço no carrinho quando existe só um produto">
@@ -245,17 +269,17 @@
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:36:50.043" endtime="20200520 16:36:50.211"></status>
+<status status="PASS" starttime="20200520 21:57:10.908" endtime="20200520 21:57:11.119"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:50.211" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:36:50.211" endtime="20200520 16:36:50.983"></status>
+<msg timestamp="20200520 21:57:11.120" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:57:11.120" endtime="20200520 21:57:12.436"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:50.043" endtime="20200520 16:36:50.983"></status>
+<status status="PASS" starttime="20200520 21:57:10.908" endtime="20200520 21:57:12.436"></status>
 </kw>
 <kw name="Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -263,16 +287,16 @@
 <arguments>
 <arg>${BASE_URL}web/p/d/${busca_produto}/teste</arg>
 </arguments>
-<msg timestamp="20200520 16:36:50.984" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
-<status status="PASS" starttime="20200520 16:36:50.984" endtime="20200520 16:36:52.687"></status>
+<msg timestamp="20200520 21:57:12.437" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
+<status status="PASS" starttime="20200520 21:57:12.437" endtime="20200520 21:57:13.464"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
-<arg>10</arg>
+<arg>20</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:52.687" endtime="20200520 16:36:53.249"></status>
+<status status="PASS" starttime="20200520 21:57:13.464" endtime="20200520 21:57:14.391"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -282,24 +306,24 @@
 <assign>
 <var>${PRODUTO}</var>
 </assign>
-<msg timestamp="20200520 16:36:53.288" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:53.250" endtime="20200520 16:36:53.288"></status>
+<msg timestamp="20200520 21:57:14.422" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:14.392" endtime="20200520 21:57:14.422"></status>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <doc>Makes a variable available globally in all tests and suites.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:53.288" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:53.288" endtime="20200520 16:36:53.289"></status>
+<msg timestamp="20200520 21:57:14.422" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:14.422" endtime="20200520 21:57:14.422"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:53.289" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:36:53.289" endtime="20200520 16:36:53.289"></status>
+<msg timestamp="20200520 21:57:14.423" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:14.423" endtime="20200520 21:57:14.423"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -307,30 +331,30 @@
 <arg>${H2_NOME_DO_PRODUTO}</arg>
 <arg>${busca_produto}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:53.289" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
-<status status="PASS" starttime="20200520 16:36:53.289" endtime="20200520 16:36:53.315"></status>
+<msg timestamp="20200520 21:57:14.423" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
+<status status="PASS" starttime="20200520 21:57:14.423" endtime="20200520 21:57:14.446"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:53.315" endtime="20200520 16:36:53.329"></status>
+<status status="PASS" starttime="20200520 21:57:14.447" endtime="20200520 21:57:14.459"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:53.329" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
-<status status="PASS" starttime="20200520 16:36:53.329" endtime="20200520 16:36:53.379"></status>
+<msg timestamp="20200520 21:57:14.460" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
+<status status="PASS" starttime="20200520 21:57:14.460" endtime="20200520 21:57:14.673"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:54.130" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-317.png"&gt;&lt;img src="selenium-screenshot-317.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:53.379" endtime="20200520 16:36:54.130"></status>
+<msg timestamp="20200520 21:57:15.417" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:14.674" endtime="20200520 21:57:15.417"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:50.983" endtime="20200520 16:36:54.130"></status>
+<status status="PASS" starttime="20200520 21:57:12.437" endtime="20200520 21:57:15.418"></status>
 </kw>
 <kw name="E e logo no site com o CPF ${cpf} e a senha ${senha}" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -339,7 +363,7 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:36:54.131" endtime="20200520 16:36:54.157"></status>
+<status status="PASS" starttime="20200520 21:57:15.418" endtime="20200520 21:57:15.447"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -347,8 +371,8 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:54.158" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:36:54.157" endtime="20200520 16:36:54.300"></status>
+<msg timestamp="20200520 21:57:15.448" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:57:15.447" endtime="20200520 21:57:15.636"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -356,39 +380,39 @@
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:54.300" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:36:54.300" endtime="20200520 16:36:54.420"></status>
+<msg timestamp="20200520 21:57:15.637" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:57:15.637" endtime="20200520 21:57:15.768"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:54.420" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:36:54.420" endtime="20200520 16:36:54.493"></status>
+<msg timestamp="20200520 21:57:15.769" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:57:15.769" endtime="20200520 21:57:15.857"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:36:54.930" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-318.png"&gt;&lt;img src="selenium-screenshot-318.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:36:54.493" endtime="20200520 16:36:54.931"></status>
+<msg timestamp="20200520 21:57:16.287" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:15.857" endtime="20200520 21:57:16.288"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>5</arg>
 </arguments>
-<msg timestamp="20200520 16:36:59.932" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20200520 16:36:54.931" endtime="20200520 16:36:59.932"></status>
+<msg timestamp="20200520 21:57:21.289" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200520 21:57:16.288" endtime="20200520 21:57:21.289"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${CARRINHO_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:36:59.933" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
-<status status="PASS" starttime="20200520 16:36:59.933" endtime="20200520 16:37:00.418"></status>
+<msg timestamp="20200520 21:57:21.289" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
+<status status="PASS" starttime="20200520 21:57:21.289" endtime="20200520 21:57:21.752"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:54.130" endtime="20200520 16:37:00.419"></status>
+<status status="PASS" starttime="20200520 21:57:15.418" endtime="20200520 21:57:21.752"></status>
 </kw>
 <kw name="Então o produto ${busca_produto} é adicionado e verificado e excluido do carrinho, ficando vazio" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -397,27 +421,27 @@
 <arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:00.419" endtime="20200520 16:37:01.951"></status>
+<status status="PASS" starttime="20200520 21:57:21.753" endtime="20200520 21:57:23.351"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${DIV_EXCLUIR_PRODUTO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:01.951" endtime="20200520 16:37:01.999"></status>
+<status status="PASS" starttime="20200520 21:57:23.351" endtime="20200520 21:57:23.369"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:02.364" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-319.png"&gt;&lt;img src="selenium-screenshot-319.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:01.999" endtime="20200520 16:37:02.364"></status>
+<msg timestamp="20200520 21:57:23.770" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:23.369" endtime="20200520 21:57:23.770"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${DIV_EXCLUIR_PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:02.364" level="INFO">Clicking element '//div[@class='remove']'.</msg>
-<status status="PASS" starttime="20200520 16:37:02.364" endtime="20200520 16:37:02.405"></status>
+<msg timestamp="20200520 21:57:23.771" level="INFO">Clicking element '//div[@class='remove']'.</msg>
+<status status="PASS" starttime="20200520 21:57:23.770" endtime="20200520 21:57:23.825"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -425,26 +449,49 @@
 <arg>${P_CARRINHO_VAZIO}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:02.406" endtime="20200520 16:37:02.610"></status>
+<status status="PASS" starttime="20200520 21:57:23.825" endtime="20200520 21:57:24.022"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:02.984" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-320.png"&gt;&lt;img src="selenium-screenshot-320.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:02.610" endtime="20200520 16:37:02.985"></status>
+<msg timestamp="20200520 21:57:24.404" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:24.022" endtime="20200520 21:57:24.405"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:00.419" endtime="20200520 16:37:02.985"></status>
+<status status="PASS" starttime="20200520 21:57:21.752" endtime="20200520 21:57:24.405"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:50.042" endtime="20200520 16:37:02.985"></status>
+<status status="PASS" starttime="20200520 21:57:10.907" endtime="20200520 21:57:24.405"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:03.351" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-321.png"&gt;&lt;img src="selenium-screenshot-321.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:02.986" endtime="20200520 16:37:03.351"></status>
+<msg timestamp="20200520 21:57:24.776" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:24.407" endtime="20200520 21:57:24.776"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:02.986" endtime="20200520 16:37:03.351"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:57:24.794" level="FAIL">No video recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:57:24.776" endtime="20200520 21:57:24.794"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:36:50.041" endtime="20200520 16:37:03.352" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:57:24.795" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:57:24.794" endtime="20200520 21:57:24.795"></status>
+</kw>
+<status status="FAIL" starttime="20200520 21:57:24.406" endtime="20200520 21:57:24.795">Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
+</kw>
+<status status="FAIL" starttime="20200520 21:57:10.906" endtime="20200520 21:57:24.796" critical="yes">Teardown failed:
+Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
 </test>
 <test id="s1-s1-t3" name="CONCLUIR UMA COMPRA">
 <kw name="Busca, verificação e adição no carrinho e conclusão da compra de um item sem serviço no site da FASTSHOP">
@@ -456,17 +503,17 @@
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:37:03.354" endtime="20200520 16:37:03.606"></status>
+<status status="PASS" starttime="20200520 21:57:24.802" endtime="20200520 21:57:25.009"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:03.606" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:37:03.606" endtime="20200520 16:37:04.399"></status>
+<msg timestamp="20200520 21:57:25.009" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:57:25.009" endtime="20200520 21:57:25.758"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:03.354" endtime="20200520 16:37:04.399"></status>
+<status status="PASS" starttime="20200520 21:57:24.802" endtime="20200520 21:57:25.758"></status>
 </kw>
 <kw name="Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -474,16 +521,16 @@
 <arguments>
 <arg>${BASE_URL}web/p/d/${busca_produto}/teste</arg>
 </arguments>
-<msg timestamp="20200520 16:37:04.400" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
-<status status="PASS" starttime="20200520 16:37:04.400" endtime="20200520 16:37:05.807"></status>
+<msg timestamp="20200520 21:57:25.759" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
+<status status="PASS" starttime="20200520 21:57:25.759" endtime="20200520 21:57:27.301"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
-<arg>10</arg>
+<arg>20</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:05.807" endtime="20200520 16:37:06.222"></status>
+<status status="PASS" starttime="20200520 21:57:27.301" endtime="20200520 21:57:27.844"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -493,24 +540,24 @@
 <assign>
 <var>${PRODUTO}</var>
 </assign>
-<msg timestamp="20200520 16:37:06.252" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:37:06.222" endtime="20200520 16:37:06.252"></status>
+<msg timestamp="20200520 21:57:27.888" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:27.844" endtime="20200520 21:57:27.888"></status>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <doc>Makes a variable available globally in all tests and suites.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:06.253" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:37:06.252" endtime="20200520 16:37:06.253"></status>
+<msg timestamp="20200520 21:57:27.889" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:27.889" endtime="20200520 21:57:27.889"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:06.253" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:37:06.253" endtime="20200520 16:37:06.253"></status>
+<msg timestamp="20200520 21:57:27.889" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:27.889" endtime="20200520 21:57:27.890"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -518,30 +565,30 @@
 <arg>${H2_NOME_DO_PRODUTO}</arg>
 <arg>${busca_produto}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:06.254" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
-<status status="PASS" starttime="20200520 16:37:06.253" endtime="20200520 16:37:06.275"></status>
+<msg timestamp="20200520 21:57:27.890" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
+<status status="PASS" starttime="20200520 21:57:27.890" endtime="20200520 21:57:27.913"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:06.276" endtime="20200520 16:37:06.286"></status>
+<status status="PASS" starttime="20200520 21:57:27.913" endtime="20200520 21:57:27.925"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:06.287" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
-<status status="PASS" starttime="20200520 16:37:06.286" endtime="20200520 16:37:06.334"></status>
+<msg timestamp="20200520 21:57:27.926" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
+<status status="PASS" starttime="20200520 21:57:27.926" endtime="20200520 21:57:27.976"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:06.778" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-322.png"&gt;&lt;img src="selenium-screenshot-322.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:06.334" endtime="20200520 16:37:06.778"></status>
+<msg timestamp="20200520 21:57:28.554" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:27.976" endtime="20200520 21:57:28.554"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:04.399" endtime="20200520 16:37:06.778"></status>
+<status status="PASS" starttime="20200520 21:57:25.759" endtime="20200520 21:57:28.555"></status>
 </kw>
 <kw name="E e logo no site com o CPF ${cpf} e a senha ${senha}" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -550,7 +597,7 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:06.779" endtime="20200520 16:37:06.818"></status>
+<status status="PASS" starttime="20200520 21:57:28.555" endtime="20200520 21:57:28.598"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -558,8 +605,8 @@
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:06.818" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:37:06.818" endtime="20200520 16:37:07.015"></status>
+<msg timestamp="20200520 21:57:28.599" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:57:28.598" endtime="20200520 21:57:28.786"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -567,39 +614,39 @@
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:07.015" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:37:07.015" endtime="20200520 16:37:07.136"></status>
+<msg timestamp="20200520 21:57:28.786" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:57:28.786" endtime="20200520 21:57:28.945"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:07.136" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:37:07.136" endtime="20200520 16:37:07.255"></status>
+<msg timestamp="20200520 21:57:28.945" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:57:28.945" endtime="20200520 21:57:29.007"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:07.669" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-323.png"&gt;&lt;img src="selenium-screenshot-323.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:07.256" endtime="20200520 16:37:07.669"></status>
+<msg timestamp="20200520 21:57:29.456" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:29.007" endtime="20200520 21:57:29.456"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>5</arg>
 </arguments>
-<msg timestamp="20200520 16:37:12.671" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20200520 16:37:07.670" endtime="20200520 16:37:12.671"></status>
+<msg timestamp="20200520 21:57:34.458" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200520 21:57:29.456" endtime="20200520 21:57:34.458"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${CARRINHO_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:12.672" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
-<status status="PASS" starttime="20200520 16:37:12.672" endtime="20200520 16:37:13.452"></status>
+<msg timestamp="20200520 21:57:34.459" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
+<status status="PASS" starttime="20200520 21:57:34.458" endtime="20200520 21:57:34.930"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:06.779" endtime="20200520 16:37:13.452"></status>
+<status status="PASS" starttime="20200520 21:57:28.555" endtime="20200520 21:57:34.931"></status>
 </kw>
 <kw name="Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada" library="setup_hz">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -608,27 +655,27 @@
 <arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:13.452" endtime="20200520 16:37:14.619"></status>
+<status status="PASS" starttime="20200520 21:57:34.932" endtime="20200520 21:57:36.310"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:14.620" endtime="20200520 16:37:14.634"></status>
+<status status="PASS" starttime="20200520 21:57:36.311" endtime="20200520 21:57:36.322"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:15.050" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-324.png"&gt;&lt;img src="selenium-screenshot-324.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:14.634" endtime="20200520 16:37:15.050"></status>
+<msg timestamp="20200520 21:57:36.790" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:36.323" endtime="20200520 21:57:36.791"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:15.051" level="INFO">Clicking element '//button[contains(text(), 'Continuar compra')]'.</msg>
-<status status="PASS" starttime="20200520 16:37:15.051" endtime="20200520 16:37:15.117"></status>
+<msg timestamp="20200520 21:57:36.791" level="INFO">Clicking element '//button[contains(text(), 'Continuar compra')]'.</msg>
+<status status="PASS" starttime="20200520 21:57:36.791" endtime="20200520 21:57:36.858"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -636,27 +683,27 @@
 <arg>${A_ADICIONAR_NOVO_ENDERECO}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:15.117" endtime="20200520 16:37:16.340"></status>
+<status status="PASS" starttime="20200520 21:57:36.858" endtime="20200520 21:57:37.997"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_ENDERECO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:16.340" endtime="20200520 16:37:16.365"></status>
+<status status="PASS" starttime="20200520 21:57:37.997" endtime="20200520 21:57:38.016"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:16.814" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-325.png"&gt;&lt;img src="selenium-screenshot-325.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:16.365" endtime="20200520 16:37:16.814"></status>
+<msg timestamp="20200520 21:57:38.426" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:38.016" endtime="20200520 21:57:38.426"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_ENDERECO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:16.814" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
-<status status="PASS" starttime="20200520 16:37:16.814" endtime="20200520 16:37:16.855"></status>
+<msg timestamp="20200520 21:57:38.426" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
+<status status="PASS" starttime="20200520 21:57:38.426" endtime="20200520 21:57:38.472"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -664,7 +711,7 @@
 <arg>${DIV_QUANDO_RECEBER}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:16.855" endtime="20200520 16:37:19.929"></status>
+<status status="PASS" starttime="20200520 21:57:38.473" endtime="20200520 21:57:41.782"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -672,42 +719,42 @@
 <arg>${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:19.930" endtime="20200520 16:37:19.946"></status>
+<status status="PASS" starttime="20200520 21:57:41.782" endtime="20200520 21:57:41.799"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>//span[contains(text(), '${PRODUTO}')]</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:19.947" endtime="20200520 16:37:19.969"></status>
+<status status="PASS" starttime="20200520 21:57:41.799" endtime="20200520 21:57:41.822"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:19.970" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
-<status status="PASS" starttime="20200520 16:37:19.969" endtime="20200520 16:37:19.970"></status>
+<msg timestamp="20200520 21:57:41.823" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200520 21:57:41.822" endtime="20200520 21:57:41.823"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:19.970" endtime="20200520 16:37:19.981"></status>
+<status status="PASS" starttime="20200520 21:57:41.823" endtime="20200520 21:57:41.838"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:20.361" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-326.png"&gt;&lt;img src="selenium-screenshot-326.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:19.981" endtime="20200520 16:37:20.361"></status>
+<msg timestamp="20200520 21:57:42.252" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:41.838" endtime="20200520 21:57:42.252"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:20.361" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
-<status status="PASS" starttime="20200520 16:37:20.361" endtime="20200520 16:37:20.422"></status>
+<msg timestamp="20200520 21:57:42.253" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
+<status status="PASS" starttime="20200520 21:57:42.253" endtime="20200520 21:57:42.327"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -715,7 +762,7 @@
 <arg>${H1_ADICIONAR_SERVICO}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:20.422" endtime="20200520 16:37:21.600"></status>
+<status status="PASS" starttime="20200520 21:57:42.327" endtime="20200520 21:57:43.433"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -723,27 +770,27 @@
 <arg>${BUTTON_CONTINUAR_VERDE_SERVICOS}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:21.600" endtime="20200520 16:37:21.618"></status>
+<status status="PASS" starttime="20200520 21:57:43.433" endtime="20200520 21:57:43.451"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_SERVICOS}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:21.618" endtime="20200520 16:37:21.629"></status>
+<status status="PASS" starttime="20200520 21:57:43.451" endtime="20200520 21:57:43.464"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:22.021" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-327.png"&gt;&lt;img src="selenium-screenshot-327.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:21.629" endtime="20200520 16:37:22.022"></status>
+<msg timestamp="20200520 21:57:43.845" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:43.464" endtime="20200520 21:57:43.845"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_SERVICOS}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:22.022" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
-<status status="PASS" starttime="20200520 16:37:22.022" endtime="20200520 16:37:22.072"></status>
+<msg timestamp="20200520 21:57:43.845" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
+<status status="PASS" starttime="20200520 21:57:43.845" endtime="20200520 21:57:43.902"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -751,7 +798,7 @@
 <arg>${H1_COMO_DESEJA_PAGAR}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:22.073" endtime="20200520 16:37:26.325"></status>
+<status status="PASS" starttime="20200520 21:57:43.902" endtime="20200520 21:57:48.191"></status>
 </kw>
 <kw name="Select Radio Button" library="SeleniumLibrary">
 <doc>Sets the radio button group ``group_name`` to ``value``.</doc>
@@ -759,28 +806,28 @@
 <arg>payment_option</arg>
 <arg>payment-option-3</arg>
 </arguments>
-<msg timestamp="20200520 16:37:26.326" level="INFO">Selecting 'payment-option-3' from radio button 'payment_option'.</msg>
-<status status="PASS" starttime="20200520 16:37:26.326" endtime="20200520 16:37:26.398"></status>
+<msg timestamp="20200520 21:57:48.192" level="INFO">Selecting 'payment-option-3' from radio button 'payment_option'.</msg>
+<status status="PASS" starttime="20200520 21:57:48.192" endtime="20200520 21:57:48.278"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_PAGAMENTO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:26.399" endtime="20200520 16:37:26.438"></status>
+<status status="PASS" starttime="20200520 21:57:48.278" endtime="20200520 21:57:48.295"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:26.838" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-328.png"&gt;&lt;img src="selenium-screenshot-328.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:26.439" endtime="20200520 16:37:26.838"></status>
+<msg timestamp="20200520 21:57:48.684" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:48.295" endtime="20200520 21:57:48.684"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_PAGAMENTO}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:26.838" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
-<status status="PASS" starttime="20200520 16:37:26.838" endtime="20200520 16:37:26.913"></status>
+<msg timestamp="20200520 21:57:48.684" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
+<status status="PASS" starttime="20200520 21:57:48.684" endtime="20200520 21:57:48.781"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -788,61 +835,66 @@
 <arg>${DIV_DESCRICAO_DO_PAGAMENTO}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:26.913" endtime="20200520 16:37:26.943"></status>
+<status status="PASS" starttime="20200520 21:57:48.781" endtime="20200520 21:57:48.809"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONTINUAR_VERDE_PAGAMENTO}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:26.943" endtime="20200520 16:37:26.955"></status>
-</kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:27.365" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-329.png"&gt;&lt;img src="selenium-screenshot-329.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:26.955" endtime="20200520 16:37:27.366"></status>
+<msg timestamp="20200520 21:57:59.188" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:58.820" endtime="20200520 21:57:59.188"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BUTTON_CONTINUAR_VERDE_PAGAMENTO}</arg>
-</arguments>
-<msg timestamp="20200520 16:37:27.366" level="INFO">Clicking element '(//button[contains(text(), 'Continuar')])[last()]'.</msg>
-<status status="PASS" starttime="20200520 16:37:27.366" endtime="20200520 16:37:27.406"></status>
+<msg timestamp="20200520 21:57:59.258" level="FAIL">Element with locator '(//button[contains(text(), 'Continuar')])[last()]' not found.</msg>
+<status status="FAIL" starttime="20200520 21:57:48.809" endtime="20200520 21:57:59.258"></status>
 </kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${DIV_COMPRA_CONCLUIDA}</arg>
-<arg>15</arg>
-</arguments>
-<status status="PASS" starttime="20200520 16:37:27.406" endtime="20200520 16:37:35.449"></status>
+<status status="FAIL" starttime="20200520 21:57:34.931" endtime="20200520 21:57:59.258"></status>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:35.872" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-330.png"&gt;&lt;img src="selenium-screenshot-330.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:35.449" endtime="20200520 16:37:35.872"></status>
-</kw>
-<status status="PASS" starttime="20200520 16:37:13.452" endtime="20200520 16:37:35.872"></status>
-</kw>
-<status status="PASS" starttime="20200520 16:37:03.354" endtime="20200520 16:37:35.872"></status>
+<status status="FAIL" starttime="20200520 21:57:24.801" endtime="20200520 21:57:59.259"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:36.272" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-331.png"&gt;&lt;img src="selenium-screenshot-331.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:35.874" endtime="20200520 16:37:36.273"></status>
+<msg timestamp="20200520 21:57:59.663" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:57:59.260" endtime="20200520 21:57:59.663"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:35.873" endtime="20200520 16:37:36.273"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:57:59.664" level="FAIL">No video recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:57:59.663" endtime="20200520 21:57:59.664"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:03.353" endtime="20200520 16:37:36.273" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:57:59.665" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:57:59.664" endtime="20200520 21:57:59.665"></status>
+</kw>
+<status status="FAIL" starttime="20200520 21:57:59.260" endtime="20200520 21:57:59.665">Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
+</kw>
+<status status="FAIL" starttime="20200520 21:57:24.800" endtime="20200520 21:57:59.666" critical="yes">Element with locator '(//button[contains(text(), 'Continuar')])[last()]' not found.
+
+Also teardown failed:
+Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
 </test>
 <kw name="End Session" library="base" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200520 16:37:36.276" endtime="20200520 16:37:38.412"></status>
+<status status="PASS" starttime="20200520 21:57:59.670" endtime="20200520 21:58:01.826"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:36.276" endtime="20200520 16:37:38.413"></status>
+<status status="PASS" starttime="20200520 21:57:59.670" endtime="20200520 21:58:01.826"></status>
 </kw>
 <doc>FASTSHOP - INSERIR PRODUTO NO CARRINHO
 Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adicionar um produto ao carrinho.
@@ -853,7 +905,7 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 5- Adicione ao carrinho
 6- Valide o produto no carrinho
 7- Insira um serviço</doc>
-<status status="PASS" starttime="20200520 16:36:31.742" endtime="20200520 16:37:38.413"></status>
+<status status="FAIL" starttime="20200520 21:56:31.964" endtime="20200520 21:58:01.826"></status>
 </suite>
 <suite id="s1-s2" name="LOGIN PESSOA FISICA." source="C:\FastShop_hz\tests\LOGIN_PESSOA_FISICA..robot">
 <kw name="Start Session" library="base" type="setup">
@@ -863,21 +915,31 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200520 16:37:38.429" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200520 16:37:38.428" endtime="20200520 16:37:39.556"></status>
+<msg timestamp="20200520 21:58:01.866" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200520 21:58:01.866" endtime="20200520 21:58:02.993"></status>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:39.556" endtime="20200520 16:37:39.558"></status>
+<status status="PASS" starttime="20200520 21:58:02.994" endtime="20200520 21:58:02.995"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200520 16:37:39.558" endtime="20200520 16:37:39.671"></status>
+<status status="PASS" starttime="20200520 21:58:02.995" endtime="20200520 21:58:03.115"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:38.428" endtime="20200520 16:37:39.671"></status>
+<kw name="Start Video Recording" library="ScreenCapLibrary">
+<doc>Starts the recording of a video in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Video Recording` keyword.</doc>
+<status status="PASS" starttime="20200520 21:58:03.115" endtime="20200520 21:58:03.116"></status>
+</kw>
+<kw name="Start Gif Recording" library="ScreenCapLibrary">
+<doc>Starts the recording of a GIF in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
+<status status="PASS" starttime="20200520 21:58:03.116" endtime="20200520 21:58:03.117"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:58:01.865" endtime="20200520 21:58:03.117"></status>
 </kw>
 <test id="s1-s2-t1" name="LOGIN COM SUCESSO">
 <kw name="Login com sucesso">
@@ -889,17 +951,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:37:39.673" endtime="20200520 16:37:39.678"></status>
+<status status="PASS" starttime="20200520 21:58:03.120" endtime="20200520 21:58:03.157"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:39.678" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:37:39.678" endtime="20200520 16:37:42.815"></status>
+<msg timestamp="20200520 21:58:03.158" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:03.158" endtime="20200520 21:58:06.174"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:39.673" endtime="20200520 16:37:42.815"></status>
+<status status="PASS" starttime="20200520 21:58:03.119" endtime="20200520 21:58:06.174"></status>
 </kw>
 <kw name="Quando logo com o usuário ${usuario_existente} e insiro a sua senha válida ${senha_valida}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -907,8 +969,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:37:42.816" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:37:42.816" endtime="20200520 16:37:45.000"></status>
+<msg timestamp="20200520 21:58:06.176" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:06.175" endtime="20200520 21:58:08.509"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -916,8 +978,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario_existente}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:45.000" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:37:45.000" endtime="20200520 16:37:45.292"></status>
+<msg timestamp="20200520 21:58:08.510" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:08.509" endtime="20200520 21:58:08.837"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -925,23 +987,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha_valida}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:45.292" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:37:45.292" endtime="20200520 16:37:45.476"></status>
+<msg timestamp="20200520 21:58:08.838" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:08.838" endtime="20200520 21:58:09.045"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:45.477" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:37:45.476" endtime="20200520 16:37:45.541"></status>
+<msg timestamp="20200520 21:58:09.046" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:09.045" endtime="20200520 21:58:09.112"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:46.012" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-332.png"&gt;&lt;img src="selenium-screenshot-332.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:45.542" endtime="20200520 16:37:46.012"></status>
+<msg timestamp="20200520 21:58:09.567" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:09.112" endtime="20200520 21:58:09.567"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:42.815" endtime="20200520 16:37:46.012"></status>
+<status status="PASS" starttime="20200520 21:58:06.175" endtime="20200520 21:58:09.567"></status>
 </kw>
 <kw name="Então o site me direciona para a tela inicial e exibe meu nome no canto superior direito ${nome_cliente_logado}" library="setup_hz">
 <kw name="Should Contain" library="BuiltIn">
@@ -950,7 +1012,7 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${A_NOME_CLIENTE_LOGADO}</arg>
 <arg>${nome_cliente_logado}</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:46.013" endtime="20200520 16:37:46.013"></status>
+<status status="PASS" starttime="20200520 21:58:09.568" endtime="20200520 21:58:09.568"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -958,26 +1020,40 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${A_NOME_CLIENTE_LOGADO}</arg>
 <arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20200520 16:37:46.014" endtime="20200520 16:37:51.149"></status>
+<status status="PASS" starttime="20200520 21:58:09.568" endtime="20200520 21:58:15.769"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:51.686" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-333.png"&gt;&lt;img src="selenium-screenshot-333.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:51.149" endtime="20200520 16:37:51.686"></status>
+<msg timestamp="20200520 21:58:16.347" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:15.770" endtime="20200520 21:58:16.347"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:46.013" endtime="20200520 16:37:51.686"></status>
+<status status="PASS" starttime="20200520 21:58:09.567" endtime="20200520 21:58:16.347"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:39.672" endtime="20200520 16:37:51.686"></status>
+<status status="PASS" starttime="20200520 21:58:03.119" endtime="20200520 21:58:16.347"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:52.231" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-334.png"&gt;&lt;img src="selenium-screenshot-334.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:51.688" endtime="20200520 16:37:52.232"></status>
+<msg timestamp="20200520 21:58:16.892" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:16.349" endtime="20200520 21:58:16.892"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:51.687" endtime="20200520 16:37:52.232"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:17.895" level="INFO" html="yes">&lt;a href="recording_4.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_4.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:16.892" endtime="20200520 21:58:17.895"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:39.671" endtime="20200520 16:37:52.232" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:25.117" level="INFO" html="yes">&lt;a href="screenshot_4.gif"&gt;&lt;img src="screenshot_4.gif" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:17.895" endtime="20200520 21:58:25.196"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:58:16.348" endtime="20200520 21:58:25.196"></status>
+</kw>
+<status status="PASS" starttime="20200520 21:58:03.117" endtime="20200520 21:58:25.196" critical="yes"></status>
 </test>
 <test id="s1-s2-t2" name="LOGIN COM DADOS INVÁLIDOS">
 <kw name="Realizar login com dados inválidos">
@@ -989,17 +1065,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:37:52.236" endtime="20200520 16:37:52.507"></status>
+<status status="PASS" starttime="20200520 21:58:25.200" endtime="20200520 21:58:25.484"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:52.507" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:37:52.507" endtime="20200520 16:37:53.460"></status>
+<msg timestamp="20200520 21:58:25.484" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:25.484" endtime="20200520 21:58:26.724"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:52.235" endtime="20200520 16:37:53.461"></status>
+<status status="PASS" starttime="20200520 21:58:25.199" endtime="20200520 21:58:26.725"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1007,8 +1083,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:37:53.462" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:37:53.461" endtime="20200520 16:37:55.364"></status>
+<msg timestamp="20200520 21:58:26.726" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:26.726" endtime="20200520 21:58:27.936"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1016,8 +1092,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:55.364" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:37:55.364" endtime="20200520 16:37:55.542"></status>
+<msg timestamp="20200520 21:58:27.937" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:27.936" endtime="20200520 21:58:28.480"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1025,23 +1101,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:55.543" level="INFO">Typing text '123456789' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:37:55.542" endtime="20200520 16:37:55.698"></status>
+<msg timestamp="20200520 21:58:28.480" level="INFO">Typing text '123456789' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:28.480" endtime="20200520 21:58:28.649"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:55.699" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:37:55.698" endtime="20200520 16:37:55.764"></status>
+<msg timestamp="20200520 21:58:28.650" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:28.649" endtime="20200520 21:58:28.730"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:56.192" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-335.png"&gt;&lt;img src="selenium-screenshot-335.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:55.764" endtime="20200520 16:37:56.192"></status>
+<msg timestamp="20200520 21:58:29.122" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:28.730" endtime="20200520 21:58:29.122"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:53.461" endtime="20200520 16:37:56.192"></status>
+<status status="PASS" starttime="20200520 21:58:26.725" endtime="20200520 21:58:29.123"></status>
 </kw>
 <kw name="Entao deve ser apresentada a mensagem que os dados são inválidos ${mensagem_login_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1050,17 +1126,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${P_MENSSAGEM_ERRO_LOGIN}</arg>
 <arg>${mensagem_login_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:56.193" level="INFO">Verifying element '//p[@class='err-msg']' contains exact text 'Login ou senha inválidos'.</msg>
-<status status="PASS" starttime="20200520 16:37:56.193" endtime="20200520 16:37:56.217"></status>
+<msg timestamp="20200520 21:58:29.124" level="INFO">Verifying element '//p[@class='err-msg']' contains exact text 'Login ou senha inválidos'.</msg>
+<status status="PASS" starttime="20200520 21:58:29.123" endtime="20200520 21:58:29.149"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:37:56.641" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-336.png"&gt;&lt;img src="selenium-screenshot-336.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:56.218" endtime="20200520 16:37:56.641"></status>
+<msg timestamp="20200520 21:58:29.518" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:29.150" endtime="20200520 21:58:29.518"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:56.193" endtime="20200520 16:37:56.641"></status>
+<status status="PASS" starttime="20200520 21:58:29.123" endtime="20200520 21:58:29.518"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:52.235" endtime="20200520 16:37:56.641"></status>
+<status status="PASS" starttime="20200520 21:58:25.199" endtime="20200520 21:58:29.518"></status>
 </kw>
 <kw name="Realizar login com dados inválidos">
 <arguments>
@@ -1071,17 +1147,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:37:56.643" endtime="20200520 16:37:56.733"></status>
+<status status="PASS" starttime="20200520 21:58:29.520" endtime="20200520 21:58:29.641"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:56.734" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:37:56.733" endtime="20200520 16:37:57.535"></status>
+<msg timestamp="20200520 21:58:29.641" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:29.641" endtime="20200520 21:58:30.431"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:56.642" endtime="20200520 16:37:57.535"></status>
+<status status="PASS" starttime="20200520 21:58:29.520" endtime="20200520 21:58:30.432"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1089,8 +1165,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:37:57.536" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:37:57.536" endtime="20200520 16:37:59.182"></status>
+<msg timestamp="20200520 21:58:30.433" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:30.432" endtime="20200520 21:58:31.614"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1098,8 +1174,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:59.182" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:37:59.182" endtime="20200520 16:37:59.488"></status>
+<msg timestamp="20200520 21:58:31.615" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:31.615" endtime="20200520 21:58:32.207"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1107,23 +1183,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:59.489" level="INFO">Typing text '1234568' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:37:59.488" endtime="20200520 16:37:59.611"></status>
+<msg timestamp="20200520 21:58:32.208" level="INFO">Typing text '1234568' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:32.208" endtime="20200520 21:58:32.325"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:37:59.611" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:37:59.611" endtime="20200520 16:37:59.709"></status>
+<msg timestamp="20200520 21:58:32.325" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:32.325" endtime="20200520 21:58:32.386"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:00.141" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-337.png"&gt;&lt;img src="selenium-screenshot-337.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:37:59.709" endtime="20200520 16:38:00.142"></status>
+<msg timestamp="20200520 21:58:32.849" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:32.386" endtime="20200520 21:58:32.849"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:57.535" endtime="20200520 16:38:00.142"></status>
+<status status="PASS" starttime="20200520 21:58:30.432" endtime="20200520 21:58:32.850"></status>
 </kw>
 <kw name="Entao deve ser apresentada a mensagem que os dados são inválidos ${mensagem_login_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1132,27 +1208,50 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${P_MENSSAGEM_ERRO_LOGIN}</arg>
 <arg>${mensagem_login_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:00.143" level="INFO">Verifying element '//p[@class='err-msg']' contains exact text 'Login ou senha inválidos'.</msg>
-<status status="PASS" starttime="20200520 16:38:00.142" endtime="20200520 16:38:00.164"></status>
+<msg timestamp="20200520 21:58:32.850" level="INFO">Verifying element '//p[@class='err-msg']' contains exact text 'Login ou senha inválidos'.</msg>
+<status status="PASS" starttime="20200520 21:58:32.850" endtime="20200520 21:58:32.872"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:00.589" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-338.png"&gt;&lt;img src="selenium-screenshot-338.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:00.164" endtime="20200520 16:38:00.589"></status>
+<msg timestamp="20200520 21:58:33.266" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:32.873" endtime="20200520 21:58:33.266"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:00.142" endtime="20200520 16:38:00.590"></status>
+<status status="PASS" starttime="20200520 21:58:32.850" endtime="20200520 21:58:33.266"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:56.642" endtime="20200520 16:38:00.590"></status>
+<status status="PASS" starttime="20200520 21:58:29.519" endtime="20200520 21:58:33.266"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:00.997" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-339.png"&gt;&lt;img src="selenium-screenshot-339.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:00.591" endtime="20200520 16:38:00.997"></status>
+<msg timestamp="20200520 21:58:33.702" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:33.267" endtime="20200520 21:58:33.703"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:00.591" endtime="20200520 16:38:00.998"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:33.703" level="FAIL">No video recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:33.703" endtime="20200520 21:58:33.703"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:37:52.234" endtime="20200520 16:38:00.998" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:33.704" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:33.704" endtime="20200520 21:58:33.704"></status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:33.267" endtime="20200520 21:58:33.704">Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:25.198" endtime="20200520 21:58:33.705" critical="yes">Teardown failed:
+Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
 </test>
 <test id="s1-s2-t3" name="LOGIN COM CPF INVÁLIDO">
 <kw name="Realizar login com CPF inválido">
@@ -1164,17 +1263,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:38:01.001" endtime="20200520 16:38:01.367"></status>
+<status status="PASS" starttime="20200520 21:58:33.709" endtime="20200520 21:58:33.877"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:01.368" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:38:01.367" endtime="20200520 16:38:01.924"></status>
+<msg timestamp="20200520 21:58:33.878" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:33.877" endtime="20200520 21:58:34.624"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:01.001" endtime="20200520 16:38:01.925"></status>
+<status status="PASS" starttime="20200520 21:58:33.709" endtime="20200520 21:58:34.624"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1182,8 +1281,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:38:01.927" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:38:01.926" endtime="20200520 16:38:02.819"></status>
+<msg timestamp="20200520 21:58:34.625" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:34.625" endtime="20200520 21:58:36.005"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1191,8 +1290,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:02.820" level="INFO">Typing text '941.861.830-32' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:38:02.819" endtime="20200520 16:38:03.037"></status>
+<msg timestamp="20200520 21:58:36.006" level="INFO">Typing text '941.861.830-32' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:36.005" endtime="20200520 21:58:36.516"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1200,23 +1299,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:03.038" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:38:03.038" endtime="20200520 16:38:03.156"></status>
+<msg timestamp="20200520 21:58:36.517" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:36.516" endtime="20200520 21:58:36.665"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:03.156" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:38:03.156" endtime="20200520 16:38:03.224"></status>
+<msg timestamp="20200520 21:58:36.665" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:36.665" endtime="20200520 21:58:36.730"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:03.632" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-340.png"&gt;&lt;img src="selenium-screenshot-340.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:03.225" endtime="20200520 16:38:03.632"></status>
+<msg timestamp="20200520 21:58:37.137" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:36.730" endtime="20200520 21:58:37.137"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:01.925" endtime="20200520 16:38:03.632"></status>
+<status status="PASS" starttime="20200520 21:58:34.624" endtime="20200520 21:58:37.137"></status>
 </kw>
 <kw name="Entao será apresentada a mensagem que o cpf é inválido ${mensagem_login_cpf_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1225,17 +1324,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${DIV_CPF_INVALIDO}</arg>
 <arg>${mensagem_login_cpf_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:03.633" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Informe um CPF válido'.</msg>
-<status status="PASS" starttime="20200520 16:38:03.633" endtime="20200520 16:38:03.682"></status>
+<msg timestamp="20200520 21:58:37.138" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Informe um CPF válido'.</msg>
+<status status="PASS" starttime="20200520 21:58:37.138" endtime="20200520 21:58:37.163"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:04.051" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-341.png"&gt;&lt;img src="selenium-screenshot-341.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:03.682" endtime="20200520 16:38:04.051"></status>
+<msg timestamp="20200520 21:58:37.509" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:37.163" endtime="20200520 21:58:37.509"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:03.633" endtime="20200520 16:38:04.051"></status>
+<status status="PASS" starttime="20200520 21:58:37.138" endtime="20200520 21:58:37.509"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:01.000" endtime="20200520 16:38:04.051"></status>
+<status status="PASS" starttime="20200520 21:58:33.709" endtime="20200520 21:58:37.509"></status>
 </kw>
 <kw name="Realizar login com CPF inválido">
 <arguments>
@@ -1246,17 +1345,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:38:04.071" endtime="20200520 16:38:04.146"></status>
+<status status="PASS" starttime="20200520 21:58:37.511" endtime="20200520 21:58:37.689"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:04.146" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:38:04.146" endtime="20200520 16:38:04.899"></status>
+<msg timestamp="20200520 21:58:37.689" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:37.689" endtime="20200520 21:58:38.507"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:04.070" endtime="20200520 16:38:04.899"></status>
+<status status="PASS" starttime="20200520 21:58:37.510" endtime="20200520 21:58:38.507"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1264,8 +1363,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:38:04.900" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:38:04.900" endtime="20200520 16:38:06.588"></status>
+<msg timestamp="20200520 21:58:38.508" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:38.508" endtime="20200520 21:58:39.826"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1273,8 +1372,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:06.589" level="INFO">Typing text '941.861.830-36' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:38:06.588" endtime="20200520 16:38:06.795"></status>
+<msg timestamp="20200520 21:58:39.826" level="INFO">Typing text '941.861.830-36' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:39.826" endtime="20200520 21:58:40.327"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1282,23 +1381,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:06.795" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:38:06.795" endtime="20200520 16:38:06.928"></status>
+<msg timestamp="20200520 21:58:40.328" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:40.328" endtime="20200520 21:58:40.445"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:06.928" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:38:06.928" endtime="20200520 16:38:06.984"></status>
+<msg timestamp="20200520 21:58:40.445" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:40.445" endtime="20200520 21:58:40.509"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:07.369" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-342.png"&gt;&lt;img src="selenium-screenshot-342.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:06.984" endtime="20200520 16:38:07.369"></status>
+<msg timestamp="20200520 21:58:40.905" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:40.510" endtime="20200520 21:58:40.905"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:04.899" endtime="20200520 16:38:07.370"></status>
+<status status="PASS" starttime="20200520 21:58:38.507" endtime="20200520 21:58:40.905"></status>
 </kw>
 <kw name="Entao será apresentada a mensagem que o cpf é inválido ${mensagem_login_cpf_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1307,27 +1406,50 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${DIV_CPF_INVALIDO}</arg>
 <arg>${mensagem_login_cpf_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:07.371" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Informe um CPF válido'.</msg>
-<status status="PASS" starttime="20200520 16:38:07.370" endtime="20200520 16:38:07.389"></status>
+<msg timestamp="20200520 21:58:40.906" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Informe um CPF válido'.</msg>
+<status status="PASS" starttime="20200520 21:58:40.906" endtime="20200520 21:58:40.928"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:07.760" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-343.png"&gt;&lt;img src="selenium-screenshot-343.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:07.389" endtime="20200520 16:38:07.760"></status>
+<msg timestamp="20200520 21:58:41.268" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:40.928" endtime="20200520 21:58:41.268"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:07.370" endtime="20200520 16:38:07.760"></status>
+<status status="PASS" starttime="20200520 21:58:40.906" endtime="20200520 21:58:41.268"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:04.070" endtime="20200520 16:38:07.760"></status>
+<status status="PASS" starttime="20200520 21:58:37.510" endtime="20200520 21:58:41.269"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:08.132" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-344.png"&gt;&lt;img src="selenium-screenshot-344.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:07.761" endtime="20200520 16:38:08.133"></status>
+<msg timestamp="20200520 21:58:41.646" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:41.270" endtime="20200520 21:58:41.646"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:07.761" endtime="20200520 16:38:08.133"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:41.647" level="FAIL">No video recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:41.646" endtime="20200520 21:58:41.647"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:00.999" endtime="20200520 16:38:08.133" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:41.648" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:41.647" endtime="20200520 21:58:41.648"></status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:41.269" endtime="20200520 21:58:41.648">Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:33.708" endtime="20200520 21:58:41.648" critical="yes">Teardown failed:
+Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
 </test>
 <test id="s1-s2-t4" name="LOGIN COM CAMPOS EM BRANCO">
 <kw name="Realizar login com CPF inválido">
@@ -1339,17 +1461,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:38:08.136" endtime="20200520 16:38:08.312"></status>
+<status status="PASS" starttime="20200520 21:58:41.653" endtime="20200520 21:58:41.736"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:08.313" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:38:08.313" endtime="20200520 16:38:09.096"></status>
+<msg timestamp="20200520 21:58:41.736" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:41.736" endtime="20200520 21:58:42.521"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:08.136" endtime="20200520 16:38:09.096"></status>
+<status status="PASS" starttime="20200520 21:58:41.652" endtime="20200520 21:58:42.522"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1357,8 +1479,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:38:09.097" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:38:09.097" endtime="20200520 16:38:10.328"></status>
+<msg timestamp="20200520 21:58:42.523" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:42.522" endtime="20200520 21:58:44.152"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1366,8 +1488,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:10.328" level="INFO">Typing text '' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:38:10.328" endtime="20200520 16:38:10.944"></status>
+<msg timestamp="20200520 21:58:44.153" level="INFO">Typing text '' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:44.153" endtime="20200520 21:58:44.397"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1375,23 +1497,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:10.944" level="INFO">Typing text '12234344' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:38:10.944" endtime="20200520 16:38:11.094"></status>
+<msg timestamp="20200520 21:58:44.398" level="INFO">Typing text '12234344' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:44.397" endtime="20200520 21:58:44.522"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:11.095" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:38:11.095" endtime="20200520 16:38:11.163"></status>
+<msg timestamp="20200520 21:58:44.522" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:44.522" endtime="20200520 21:58:44.617"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:11.590" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-345.png"&gt;&lt;img src="selenium-screenshot-345.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:11.163" endtime="20200520 16:38:11.590"></status>
+<msg timestamp="20200520 21:58:45.002" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:44.617" endtime="20200520 21:58:45.002"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:09.096" endtime="20200520 16:38:11.590"></status>
+<status status="PASS" starttime="20200520 21:58:42.522" endtime="20200520 21:58:45.002"></status>
 </kw>
 <kw name="Entao será apresentada a mensagem que o cpf é inválido ${mensagem_login_cpf_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1400,17 +1522,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${DIV_CPF_INVALIDO}</arg>
 <arg>${mensagem_login_cpf_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:11.591" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Campo obrigatório'.</msg>
-<status status="PASS" starttime="20200520 16:38:11.591" endtime="20200520 16:38:11.612"></status>
+<msg timestamp="20200520 21:58:45.003" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Campo obrigatório'.</msg>
+<status status="PASS" starttime="20200520 21:58:45.003" endtime="20200520 21:58:45.023"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:11.986" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-346.png"&gt;&lt;img src="selenium-screenshot-346.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:11.612" endtime="20200520 16:38:11.986"></status>
+<msg timestamp="20200520 21:58:45.401" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:45.024" endtime="20200520 21:58:45.401"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:11.590" endtime="20200520 16:38:11.986"></status>
+<status status="PASS" starttime="20200520 21:58:45.003" endtime="20200520 21:58:45.401"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:08.135" endtime="20200520 16:38:11.986"></status>
+<status status="PASS" starttime="20200520 21:58:41.652" endtime="20200520 21:58:45.401"></status>
 </kw>
 <kw name="Realizar login com CPF inválido">
 <arguments>
@@ -1421,17 +1543,17 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20200520 16:38:11.988" endtime="20200520 16:38:12.096"></status>
+<status status="PASS" starttime="20200520 21:58:45.403" endtime="20200520 21:58:45.545"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:12.096" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
-<status status="PASS" starttime="20200520 16:38:12.096" endtime="20200520 16:38:12.724"></status>
+<msg timestamp="20200520 21:58:45.546" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200520 21:58:45.546" endtime="20200520 21:58:46.371"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:11.987" endtime="20200520 16:38:12.724"></status>
+<status status="PASS" starttime="20200520 21:58:45.403" endtime="20200520 21:58:46.372"></status>
 </kw>
 <kw name="Quando tento logar com o usuário ${usuario} e insiro a sua senha ${senha}" library="setup_hz">
 <kw name="Go To" library="SeleniumLibrary">
@@ -1439,8 +1561,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arguments>
 <arg>${BASE_URL}web/login</arg>
 </arguments>
-<msg timestamp="20200520 16:38:12.726" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
-<status status="PASS" starttime="20200520 16:38:12.725" endtime="20200520 16:38:14.560"></status>
+<msg timestamp="20200520 21:58:46.373" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/login'</msg>
+<status status="PASS" starttime="20200520 21:58:46.372" endtime="20200520 21:58:47.685"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1448,8 +1570,8 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_CPF}</arg>
 <arg>${usuario}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:14.561" level="INFO">Typing text '34611974839' into text field 'id:document'.</msg>
-<status status="PASS" starttime="20200520 16:38:14.561" endtime="20200520 16:38:14.716"></status>
+<msg timestamp="20200520 21:58:47.685" level="INFO">Typing text '34611974839' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200520 21:58:47.685" endtime="20200520 21:58:48.452"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -1457,23 +1579,23 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${ID_LOGIN_SENHA}</arg>
 <arg>${senha}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:14.717" level="INFO">Typing text '' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20200520 16:38:14.716" endtime="20200520 16:38:14.801"></status>
+<msg timestamp="20200520 21:58:48.453" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200520 21:58:48.452" endtime="20200520 21:58:48.557"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${BUTTON_CONFIRMAR_VERDE}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:14.801" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
-<status status="PASS" starttime="20200520 16:38:14.801" endtime="20200520 16:38:14.883"></status>
+<msg timestamp="20200520 21:58:48.557" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200520 21:58:48.557" endtime="20200520 21:58:48.667"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:15.269" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-347.png"&gt;&lt;img src="selenium-screenshot-347.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:14.884" endtime="20200520 16:38:15.269"></status>
+<msg timestamp="20200520 21:58:49.070" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:48.668" endtime="20200520 21:58:49.070"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:12.725" endtime="20200520 16:38:15.269"></status>
+<status status="PASS" starttime="20200520 21:58:46.372" endtime="20200520 21:58:49.070"></status>
 </kw>
 <kw name="Entao será apresentada a mensagem que o cpf é inválido ${mensagem_login_cpf_invalido}" library="setup_hz">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -1482,54 +1604,77 @@ Para que eu possa acessar o site da FastShop, sendo um cliente, quero poder adic
 <arg>${DIV_CPF_INVALIDO}</arg>
 <arg>${mensagem_login_cpf_invalido}</arg>
 </arguments>
-<msg timestamp="20200520 16:38:15.270" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Campo obrigatório'.</msg>
-<status status="PASS" starttime="20200520 16:38:15.270" endtime="20200520 16:38:15.288"></status>
+<msg timestamp="20200520 21:58:49.072" level="INFO">Verifying element '//div[@class='invalid-feedback']' contains exact text 'Campo obrigatório'.</msg>
+<status status="PASS" starttime="20200520 21:58:49.071" endtime="20200520 21:58:49.097"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:15.648" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-348.png"&gt;&lt;img src="selenium-screenshot-348.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:15.288" endtime="20200520 16:38:15.649"></status>
+<msg timestamp="20200520 21:58:49.443" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:49.097" endtime="20200520 21:58:49.443"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:15.269" endtime="20200520 16:38:15.649"></status>
+<status status="PASS" starttime="20200520 21:58:49.071" endtime="20200520 21:58:49.443"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:11.987" endtime="20200520 16:38:15.649"></status>
+<status status="PASS" starttime="20200520 21:58:45.402" endtime="20200520 21:58:49.443"></status>
 </kw>
 <kw name="End Test" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200520 16:38:16.024" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-349.png"&gt;&lt;img src="selenium-screenshot-349.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200520 16:38:15.650" endtime="20200520 16:38:16.024"></status>
+<msg timestamp="20200520 21:58:49.793" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200520 21:58:49.444" endtime="20200520 21:58:49.793"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:15.650" endtime="20200520 16:38:16.025"></status>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:49.794" level="FAIL">No video recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:49.793" endtime="20200520 21:58:49.794"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:08.135" endtime="20200520 16:38:16.025" critical="yes"></status>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20200520 21:58:49.794" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20200520 21:58:49.794" endtime="20200520 21:58:49.794"></status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:49.444" endtime="20200520 21:58:49.794">Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
+</kw>
+<status status="FAIL" starttime="20200520 21:58:41.651" endtime="20200520 21:58:49.795" critical="yes">Teardown failed:
+Several failures occurred:
+
+1) No video recordings are started!
+
+2) No gif recordings are started!</status>
 </test>
 <kw name="End Session" library="base" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200520 16:38:16.028" endtime="20200520 16:38:18.157"></status>
+<status status="PASS" starttime="20200520 21:58:49.799" endtime="20200520 21:58:51.928"></status>
 </kw>
-<status status="PASS" starttime="20200520 16:38:16.027" endtime="20200520 16:38:18.157"></status>
+<status status="PASS" starttime="20200520 21:58:49.798" endtime="20200520 21:58:51.929"></status>
 </kw>
 <doc>FASTSHOP - REALIZAR LOGIN
 Como um novo usuário
 Edwin deseja acessar o site da Fastshop
 Para que ele possa navegar e realizar compras no website</doc>
-<status status="PASS" starttime="20200520 16:37:38.417" endtime="20200520 16:38:18.157"></status>
+<status status="FAIL" starttime="20200520 21:58:01.841" endtime="20200520 21:58:51.929"></status>
 </suite>
-<status status="PASS" starttime="20200520 16:36:31.712" endtime="20200520 16:38:18.162"></status>
+<status status="FAIL" starttime="20200520 21:56:31.932" endtime="20200520 21:58:51.944"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="7" fail="0">Critical Tests</stat>
-<stat pass="7" fail="0">All Tests</stat>
+<stat pass="2" fail="5">Critical Tests</stat>
+<stat pass="2" fail="5">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="7" fail="0" id="s1" name="Tests">Tests</stat>
-<stat pass="3" fail="0" id="s1-s1" name="INSERIR PRODUTO CARRINHO">Tests.INSERIR PRODUTO CARRINHO</stat>
-<stat pass="4" fail="0" id="s1-s2" name="LOGIN PESSOA FISICA.">Tests.LOGIN PESSOA FISICA.</stat>
+<stat pass="2" fail="5" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="2" id="s1-s1" name="INSERIR PRODUTO CARRINHO">Tests.INSERIR PRODUTO CARRINHO</stat>
+<stat pass="1" fail="3" id="s1-s2" name="LOGIN PESSOA FISICA.">Tests.LOGIN PESSOA FISICA.</stat>
 </suite>
 </statistics>
 <errors>
