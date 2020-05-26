@@ -24,9 +24,6 @@ INSERIR DOIS PRODUTOS NO CARRINHO COM SERVIÇO
     941.861.830-31              12345678                    AEMWHJ2BZACNZB                           00000000  
 
 
-
-
-
 *** Keywords ***
 CEP inválido não deixa concluir a compra
     [Arguments]                 ${cpf}                  ${senha}                    ${busca_produto}            ${cep}                  

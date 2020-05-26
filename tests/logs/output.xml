@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2rc1 (Python 3.8.1 on win32)" generated="20200526 20:16:03.576" rpa="false">
+<suite id="s1" name="CM-606 O cadastro de endereço esta permitindo realizar cadastro de CEP invalido" source="C:\FastShop_hz\tests\CM-606_O_cadastro_de_endereço_esta_permitindo_realizar_cadastro_de_CEP_invalido.robot">
+<kw name="Start Session" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200526 20:16:05.162" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200526 20:16:05.162" endtime="20200526 20:16:06.283"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:06.284" endtime="20200526 20:16:06.285"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200526 20:16:06.285" endtime="20200526 20:16:06.420"></status>
+</kw>
+<kw name="Start Video Recording" library="ScreenCapLibrary">
+<doc>Starts the recording of a video in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Video Recording` keyword.</doc>
+<status status="PASS" starttime="20200526 20:16:06.420" endtime="20200526 20:16:06.425"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:05.162" endtime="20200526 20:16:06.425"></status>
+</kw>
+<test id="s1-t1" name="INSERIR DOIS PRODUTOS NO CARRINHO COM SERVIÇO">
+<kw name="CEP inválido não deixa concluir a compra">
+<arguments>
+<arg>941.861.830-31</arg>
+<arg>12345678</arg>
+<arg>AEMWHJ2BZACNZB</arg>
+<arg>00000000</arg>
+</arguments>
+<kw name="Dado que acesso e verifico que estou no site da FASTSHOP" library="setup_hz">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20200526 20:16:06.427" endtime="20200526 20:16:06.433"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${BASE_URL}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:06.433" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/'</msg>
+<status status="PASS" starttime="20200526 20:16:06.433" endtime="20200526 20:16:09.343"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:06.427" endtime="20200526 20:16:09.344"></status>
+</kw>
+<kw name="Quando é preenchido o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista" library="setup_hz">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${BASE_URL}web/p/d/${busca_produto}/teste</arg>
+</arguments>
+<msg timestamp="20200526 20:16:09.345" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/p/d/AEMWHJ2BZACNZB/teste'</msg>
+<status status="PASS" starttime="20200526 20:16:09.345" endtime="20200526 20:16:10.143"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
+<arg>20</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:10.143" endtime="20200526 20:16:16.449"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${H1_NOME_DO_PRODUTO}</arg>
+</arguments>
+<assign>
+<var>${PRODUTO}</var>
+</assign>
+<msg timestamp="20200526 20:16:16.476" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200526 20:16:16.449" endtime="20200526 20:16:16.476"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${PRODUTO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:16.477" level="INFO">${PRODUTO} = iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200526 20:16:16.476" endtime="20200526 20:16:16.477"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${PRODUTO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:16.477" level="INFO">iPhone 11 Pro Max Cinza Espacial, com Tela de 6,5”, 4G, 256 GB e Câmera de 12 MP - MWHJ2BZ/A</msg>
+<status status="PASS" starttime="20200526 20:16:16.477" endtime="20200526 20:16:16.477"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${H2_NOME_DO_PRODUTO}</arg>
+<arg>${busca_produto}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:16.478" level="INFO">Verifying element '//h2[@class='product-detail-partnumber']' contains exact text 'AEMWHJ2BZACNZB'.</msg>
+<status status="PASS" starttime="20200526 20:16:16.477" endtime="20200526 20:16:16.505"></status>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:16.506" endtime="20200526 20:16:16.756"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SPAN_ADICIONAR_AO_CARRINHO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:16.757" level="INFO">Clicking element '//span[@class='lb-add-cart']'.</msg>
+<status status="PASS" starttime="20200526 20:16:16.756" endtime="20200526 20:16:17.393"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:17.850" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:17.393" endtime="20200526 20:16:17.850"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:09.344" endtime="20200526 20:16:17.851"></status>
+</kw>
+<kw name="E e logo no site com o CPF ${cpf} e a senha ${senha}" library="setup_hz">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ID_LOGIN_CPF}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:17.851" endtime="20200526 20:16:17.883"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_LOGIN_CPF}</arg>
+<arg>${cpf}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:17.883" level="INFO">Typing text '941.861.830-31' into text field 'id:document'.</msg>
+<status status="PASS" starttime="20200526 20:16:17.883" endtime="20200526 20:16:18.093"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_LOGIN_SENHA}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:18.094" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200526 20:16:18.093" endtime="20200526 20:16:18.293"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUTTON_CONFIRMAR_VERDE}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:18.294" level="INFO">Clicking element '//button[@class='btn btn-green']'.</msg>
+<status status="PASS" starttime="20200526 20:16:18.293" endtime="20200526 20:16:18.397"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:18.866" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:18.398" endtime="20200526 20:16:18.867"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${CARRINHO_URL}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:18.867" level="INFO">Opening url 'http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho'</msg>
+<status status="PASS" starttime="20200526 20:16:18.867" endtime="20200526 20:16:19.946"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:17.851" endtime="20200526 20:16:19.946"></status>
+</kw>
+<kw name="E adiciono um serviço" library="setup_hz">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BUTTON_SELECIONAR_SERVICO}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:19.946" endtime="20200526 20:16:22.115"></status>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUTTON_SELECIONAR_SERVICO}</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:22.115" endtime="20200526 20:16:22.128"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:22.511" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:22.128" endtime="20200526 20:16:22.511"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUTTON_SELECIONAR_SERVICO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:22.512" level="INFO">Clicking element '//button[contains(text(), 'Selecionar')]'.</msg>
+<status status="PASS" starttime="20200526 20:16:22.511" endtime="20200526 20:16:22.637"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@class='checkbox']</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:22.638" endtime="20200526 20:16:22.681"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@class='checkbox']</arg>
+</arguments>
+<msg timestamp="20200526 20:16:22.681" level="INFO">Clicking element '//div[@class='checkbox']'.</msg>
+<status status="PASS" starttime="20200526 20:16:22.681" endtime="20200526 20:16:22.815"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LABEL_PERIODO_DO_SEGURO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:22.815" level="INFO">Clicking element '//span[contains(text(), '+')]//..//..//label'.</msg>
+<status status="PASS" starttime="20200526 20:16:22.815" endtime="20200526 20:16:22.880"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[contains(text(), 'APLICAR')]</arg>
+</arguments>
+<msg timestamp="20200526 20:16:22.880" level="INFO">Clicking element '//button[contains(text(), 'APLICAR')]'.</msg>
+<status status="PASS" starttime="20200526 20:16:22.880" endtime="20200526 20:16:22.997"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200526 20:16:24.998" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200526 20:16:22.997" endtime="20200526 20:16:24.998"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[contains(text(), 'APLICAR')]</arg>
+</arguments>
+<msg timestamp="20200526 20:16:24.998" level="INFO">Clicking element '//button[contains(text(), 'APLICAR')]'.</msg>
+<status status="PASS" starttime="20200526 20:16:24.998" endtime="20200526 20:16:25.082"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200526 20:16:27.085" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200526 20:16:25.082" endtime="20200526 20:16:27.085"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:19.946" endtime="20200526 20:16:27.085"></status>
+</kw>
+<kw name="E entro na página de acionar um novo endereço a mesma é carregada" library="setup_hz">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:27.086" endtime="20200526 20:16:27.108"></status>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:27.109" endtime="20200526 20:16:27.139"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:27.604" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:27.139" endtime="20200526 20:16:27.605"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUTTON_CONTINUAR_COMPRA_VERDE}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:27.605" level="INFO">Clicking element '//button[contains(text(), 'Continuar compra')]'.</msg>
+<status status="PASS" starttime="20200526 20:16:27.605" endtime="20200526 20:16:28.415"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${A_ADICIONAR_NOVO_ENDERECO}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:28.416" endtime="20200526 20:16:30.656"></status>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${A_ADICIONAR_NOVO_ENDERECO}</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:30.656" endtime="20200526 20:16:30.668"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:31.171" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:30.669" endtime="20200526 20:16:31.171"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${A_ADICIONAR_NOVO_ENDERECO}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:31.172" level="INFO">Clicking element '//a[@class='btn btn-new-address']'.</msg>
+<status status="PASS" starttime="20200526 20:16:31.172" endtime="20200526 20:16:31.256"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_CEP}</arg>
+</arguments>
+<status status="PASS" starttime="20200526 20:16:31.256" endtime="20200526 20:16:33.146"></status>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<doc>:example 'John Doe'</doc>
+<assign>
+<var>${NOMEFAKE}</var>
+</assign>
+<msg timestamp="20200526 20:16:33.146" level="INFO">${NOMEFAKE} = Breno Rezende</msg>
+<status status="PASS" starttime="20200526 20:16:33.146" endtime="20200526 20:16:33.147"></status>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<doc>:example '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<assign>
+<var>${ENDERECOFAKE}</var>
+</assign>
+<msg timestamp="20200526 20:16:33.147" level="INFO">${ENDERECOFAKE} = Trevo Henrique Moreira, 70
+Cônego Pinheiro 1ª Seção
+29614-049 das Neves / PI</msg>
+<status status="PASS" starttime="20200526 20:16:33.147" endtime="20200526 20:16:33.147"></status>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<assign>
+<var>${TELEFONEFAKE}</var>
+</assign>
+<msg timestamp="20200526 20:16:33.148" level="INFO">${TELEFONEFAKE} = 61 1012 3123</msg>
+<status status="PASS" starttime="20200526 20:16:33.148" endtime="20200526 20:16:33.148"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${INPUT_ENDEREÇO_NOME_DESTINATARIO}</arg>
+<arg>${NOMEFAKE}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:33.149" level="INFO">Typing text 'Breno Rezende' into text field '//input[@formcontrolname='name']'.</msg>
+<status status="PASS" starttime="20200526 20:16:33.148" endtime="20200526 20:16:33.434"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_CEP}</arg>
+<arg>00000000</arg>
+</arguments>
+<msg timestamp="20200526 20:16:33.434" level="INFO">Typing text '00000000' into text field 'id:zipCode'.</msg>
+<status status="PASS" starttime="20200526 20:16:33.434" endtime="20200526 20:16:33.638"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_NOME_DA_RUA}</arg>
+<arg>${ENDERECOFAKE}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:33.638" level="INFO">Typing text 'Trevo Henrique Moreira, 70
+Cônego Pinheiro 1ª Seção
+29614-049 das Neves / PI' into text field 'id:streetName'.</msg>
+<status status="PASS" starttime="20200526 20:16:33.638" endtime="20200526 20:16:34.519"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_NUMERO}</arg>
+<arg>84</arg>
+</arguments>
+<msg timestamp="20200526 20:16:34.520" level="INFO">Typing text '84' into text field 'id:number'.</msg>
+<status status="PASS" starttime="20200526 20:16:34.520" endtime="20200526 20:16:34.638"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_COMPLEMENTO}</arg>
+<arg>Teste</arg>
+</arguments>
+<msg timestamp="20200526 20:16:34.638" level="INFO">Typing text 'Teste' into text field 'id:complement'.</msg>
+<status status="PASS" starttime="20200526 20:16:34.638" endtime="20200526 20:16:34.810"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_BAIRRO}</arg>
+<arg>Centro</arg>
+</arguments>
+<msg timestamp="20200526 20:16:34.811" level="INFO">Typing text 'Centro' into text field 'id:district'.</msg>
+<status status="PASS" starttime="20200526 20:16:34.810" endtime="20200526 20:16:35.064"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_CIDADE}</arg>
+<arg>Guarulhos</arg>
+</arguments>
+<msg timestamp="20200526 20:16:35.065" level="INFO">Typing text 'Guarulhos' into text field 'id:city'.</msg>
+<status status="PASS" starttime="20200526 20:16:35.065" endtime="20200526 20:16:35.294"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_TELEFONE}</arg>
+<arg>11${TELEFONEFAKE}</arg>
+</arguments>
+<msg timestamp="20200526 20:16:35.294" level="INFO">Typing text '1161 1012 3123' into text field 'id:telephone'.</msg>
+<status status="PASS" starttime="20200526 20:16:35.294" endtime="20200526 20:16:35.597"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_TIPO_CASA}</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200526 20:16:35.598" level="INFO">Selecting options from selection list '//select[@formcontrolname='housingType']' by value 1.</msg>
+<status status="PASS" starttime="20200526 20:16:35.597" endtime="20200526 20:16:35.703"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${ID_ENDEREÇO_ESTADO}</arg>
+<arg>SP</arg>
+</arguments>
+<msg timestamp="20200526 20:16:35.703" level="INFO">Selecting options from selection list '//select[@formcontrolname='state']' by value SP.</msg>
+<status status="PASS" starttime="20200526 20:16:35.703" endtime="20200526 20:16:35.812"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20200526 20:16:39.814" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200526 20:16:35.813" endtime="20200526 20:16:39.814"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:27.085" endtime="20200526 20:16:39.814"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:06.426" endtime="20200526 20:16:39.814"></status>
+</kw>
+<kw name="End Test" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200526 20:16:40.257" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:39.816" endtime="20200526 20:16:40.257"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:39.815" endtime="20200526 20:16:40.257"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:06.425" endtime="20200526 20:16:40.258" critical="yes"></status>
+</test>
+<kw name="End Session" library="base" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200526 20:16:40.261" endtime="20200526 20:16:42.403"></status>
+</kw>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.</doc>
+<msg timestamp="20200526 20:16:43.405" level="INFO" html="yes">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200526 20:16:42.403" endtime="20200526 20:16:43.405"></status>
+</kw>
+<status status="PASS" starttime="20200526 20:16:40.260" endtime="20200526 20:16:43.406"></status>
+</kw>
+<doc>Cadastro de CEP invalido.
+O cadastro de endereço esta permitindo realizar cadastro de CEP invalido.
+1 - Clicar em Adicionar novo endereço.
+2 - Preencher no campo CEP 00000000 e preencher todos os outros campos de forma manual.
+3 - Clicar em Adicionar.
+4 - Clicar no botão continuar no resumo do pedido após selecionar esse endereço cadastrado com o CEP invalido.
+Resultado obtido:
+Ao inserir CEP invalido o cadastro pode ser finalizado e permite ir pro próximo passo.
+Resultado esperado:
+Que quando inserir um CEP invalido o cadastro não seja permito e que se a regra de negócio permita esse cadastro que mostre a mensagem " CEP não localizado. Acesse a Central de Atendimento ou ligue... conforme é exibido atualmente em produção conforme evidencia anexa.</doc>
+<status status="PASS" starttime="20200526 20:16:03.577" endtime="20200526 20:16:43.406"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="CM-606 O cadastro de endereço esta permitindo realizar cadastro de CEP invalido">CM-606 O cadastro de endereço esta permitindo realizar cadastro de CEP invalido</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
