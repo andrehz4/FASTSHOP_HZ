@@ -10,7 +10,7 @@ ${H2_NOME_DO_PRODUTO}                             	  //h2[@class='product-detail
 ${H1_NOME_DO_PRODUTO}                                 //h2[@class='product-detail-partnumber']//..//h1
 ${A_ADICIONAR_NOVO_ENDERECO}                          //a[@class='btn btn-new-address']  
 ${SPAN_ADICIONAR_AO_CARRINHO}                         //span[@class='lb-add-cart']
-${BUTTON_CONTINUAR_COMPRA_VERDE}                      //button[contains(text(), 'Continuar compra')]  
+${BUTTON_CONTINUAR_COMPRA_VERDE}                      //span[contains(text(), ' Subtotal ')]//..//button[contains(text(), 'Continuar compra')]  
 ${BUTTON_CONTINUAR_VERDE_ENDERECO}                    (//button[contains(text(), 'Continuar')])[last()]   
 ${DIV_QUANDO_RECEBER}                                 //div[contains(text(), 'Quando deseja receber?')]  
 ${H1_ADICIONAR_SERVICO}                               //h1[contains(text(), 'Deseja adicionar algum serviço?')] 
@@ -46,12 +46,13 @@ ${INPUT_ENDEREÇO_NOME_DESTINATARIO}                   //input[@formcontrolname=
 ${ID_ENDEREÇO_CEP}                                    id:zipCode
 ${ID_ENDEREÇO_NOME_DA_RUA}                            id:streetName
 ${ID_ENDEREÇO_NUMERO}                                 id:number
-${ID_ENDEREÇO_COMPLEMENTO}                                 id:complement
-id:district
-id:city
-//input[@formcontrolname='state']
-//input[@formcontrolname='housingType']
-id:telephone
+${ID_ENDEREÇO_COMPLEMENTO}                            id:complement
+${ID_ENDEREÇO_BAIRRO}                                 id:district
+${ID_ENDEREÇO_CIDADE}                                 id:city
+${ID_ENDEREÇO_ESTADO}                                 //select[@formcontrolname='state']
+${ID_ENDEREÇO_TIPO_CASA}                              //select[@formcontrolname='housingType']
+${ID_ENDEREÇO_TELEFONE}                               id:telephone
+${BUTTON_SALVAR_ENDERÇO}                              //button[contains(text(), ' Adicionar ')]
 
 ### Login
 ${ID_LOGIN_CPF}                                       id:document
@@ -60,6 +61,8 @@ ${BUTTON_CONFIRMAR_VERDE}                             //button[@class='btn btn-g
 ${A_NOME_CLIENTE_LOGADO}                              //a[contains(text(), 'Teste')] 
 ${P_MENSSAGEM_ERRO_LOGIN}                             //p[@class='err-msg']
 ${DIV_CPF_INVALIDO}                                   //div[@class='invalid-feedback']
+${P_MENSSAGEM_ERRO_LOGIN}                             //p[contains(text(), ' Entre ou ')]
+${A_LOGOUT}                                           //a[@class='logout']
 
 
 ### Cadastro API

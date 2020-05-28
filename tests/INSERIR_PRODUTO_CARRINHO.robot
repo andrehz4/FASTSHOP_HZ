@@ -20,7 +20,7 @@ INSERIR DOIS PRODUTOS NO CARRINHO COM SERVIÇO
     [Template]                  Busca de dois produtos, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço
 
     #CPF                        #Senha                      #Produto                    #Produto2                                                       
-    941.861.830-31              12345678                    8S311310222PTO              AEMWHJ2BZACNZB  
+    941.861.830-31              12345678                    8S311310222PTO              PANAF160B5W1  
 
 
 

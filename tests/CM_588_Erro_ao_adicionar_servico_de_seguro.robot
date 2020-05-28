@@ -31,5 +31,4 @@ Busca de dois produtos, verificação e adição ao carrinho de um item no site 
     E e logo no site com o CPF ${cpf} e a senha ${senha}
     Quando um segundo produto é preenchido no campo de busca${busca_produto_dois}, verifico se o mesmo é retornado na lista
     E adiciono um serviço
-    Então o produto ${busca_produto} ${busca_produto_dois} são adicionados, verificados que estão no carrinho e a compra é encerrada com pagamento via cartão de crédito
-
+    Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada   

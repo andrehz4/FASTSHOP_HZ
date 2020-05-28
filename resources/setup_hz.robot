@@ -48,7 +48,43 @@ Quando um segundo produto é preenchido no campo de busca${busca_produto_dois}, 
     Click Element	                    ${SPAN_ADICIONAR_AO_CARRINHO}
     Capture Page Screenshot
 
+Quando um terceiro produto é preenchido no campo de busca${busca_produto_tres}, verifico se o mesmo é retornado na lista
+    #terceiro produto
+    Go To                               ${BASE_URL}web/p/d/${busca_produto_tres}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_tres} 
+    Set Focus To Element                ${SPAN_ADICIONAR_AO_CARRINHO}
+    Click Element	                    ${SPAN_ADICIONAR_AO_CARRINHO}
+    Capture Page Screenshot
 
+Quando um quarto produto é preenchido no campo de busca${busca_produto_quatro}, verifico se o mesmo é retornado na lista
+    #quarto produto
+    Go To                               ${BASE_URL}web/p/d/${busca_produto_quatro}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_quatro} 
+    Set Focus To Element                ${SPAN_ADICIONAR_AO_CARRINHO}
+    Click Element	                    ${SPAN_ADICIONAR_AO_CARRINHO}
+    Capture Page Screenshot
+
+Quando um quinto produto é preenchido no campo de busca${busca_produto_cinco}, verifico se o mesmo é retornado na lista
+    #quinto produto
+    Go To                               ${BASE_URL}web/p/d/${busca_produto_cinco}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_cinco} 
+    Set Focus To Element                ${SPAN_ADICIONAR_AO_CARRINHO}
+    Click Element	                    ${SPAN_ADICIONAR_AO_CARRINHO}
+    Capture Page Screenshot
+
+  
 
 E e logo no site com o CPF ${cpf} e a senha ${senha}
     Wait Until Element Is Visible       ${ID_LOGIN_CPF}                             10
@@ -59,42 +95,60 @@ E e logo no site com o CPF ${cpf} e a senha ${senha}
     Go To                               ${CARRINHO_URL}   
 
 Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada
-    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            10
+    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            20
     Set Focus To Element                ${BUTTON_CONTINUAR_COMPRA_VERDE}
+      Sleep                               3
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_COMPRA_VERDE}
-    Wait Until Element Is Visible       ${A_ADICIONAR_NOVO_ENDERECO}                10  
+    #endereço
+    Wait Until Element Is Visible       ${A_ADICIONAR_NOVO_ENDERECO}                20  
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_ENDERECO}
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_VERDE_ENDERECO}
-    Wait Until Element Is Visible       ${DIV_QUANDO_RECEBER}                       10
-    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}    10
+    
+    Wait Until Element Is Visible       ${DIV_QUANDO_RECEBER}                       20
+    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}    20
     Wait Until Element Is Visible       //span[contains(text(), '${PRODUTO}')] 
     Log                                 ${PRODUTO}
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}
-    Wait Until Element Is Visible       ${H1_ADICIONAR_SERVICO}                     10
-    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_VERDE_SERVICOS}          10
+                Sleep                               6
+    Wait Until Element Is Visible       ${H1_ADICIONAR_SERVICO}                     20
+    Wait Until Element Is Visible       ${BUTTON_CONTINUAR_VERDE_SERVICOS}          20
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_SERVICOS}
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_VERDE_SERVICOS}
-    Wait Until Element Is Visible       ${H1_COMO_DESEJA_PAGAR}                     10
-    Wait Until Element Is Visible       ${DIV_ADD_CARTAO_DE_CREDITO}                10
-    Select Radio Button                 payment_option                              payment-option-3
+    Wait Until Element Is Visible       ${H1_COMO_DESEJA_PAGAR}                     20
+    Wait Until Element Is Visible       ${DIV_ADD_CARTAO_DE_CREDITO}                20
+    Select Radio Button                 payment_option                              payment-option-4
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}
-    Wait Until Element Is Visible       ${DIV_DESCRICAO_DO_PAGAMENTO}                10
+    Wait Until Element Is Visible       ${DIV_DESCRICAO_DO_PAGAMENTO}                20
     Set Focus To Element                ${BUTTON_CONTINUAR_VERDE_FINALIZAR_COMPRA}
     Capture Page Screenshot
     Click Element                       ${BUTTON_CONTINUAR_VERDE_FINALIZAR_COMPRA} 
-    Wait Until Element Is Enabled	    ${DIV_COMPRA_CONCLUIDA}                      15       
-    Sleep                               6
+    Wait Until Element Is Enabled	    ${DIV_COMPRA_CONCLUIDA}                      30       
+    Sleep                               4
     Capture Page Screenshot    
                               
 ###################### FASTSHOP - INSERIR PRODUTO NO CARRINHO COM SEGURO
 E adiciono um serviço
+    Wait Until Element Is Visible       ${BUTTON_SELECIONAR_SERVICO}                 10
+    Set Focus To Element                ${BUTTON_SELECIONAR_SERVICO}
+    Sleep                               2
+    Capture Page Screenshot
+    Click Element                       ${BUTTON_SELECIONAR_SERVICO}
+    Wait Until Element Is Visible       //div[@class='checkbox']
+    Click Element                       //div[@class='checkbox']
+    Click Element                       ${LABEL_PERIODO_DO_SEGURO}                                             
+    Click Element                       //button[contains(text(), 'APLICAR')]   
+    Sleep                               4
+    Click Element                       //button[contains(text(), 'APLICAR')]   
+    Sleep                               7
+
+E adiciono um serviço de garantia estendida com data para instalação
     Wait Until Element Is Visible       ${BUTTON_SELECIONAR_SERVICO}                 10
     Set Focus To Element                ${BUTTON_SELECIONAR_SERVICO}
     Capture Page Screenshot
@@ -104,8 +158,21 @@ E adiciono um serviço
     Click Element                       ${LABEL_PERIODO_DO_SEGURO}                                             
     Click Element                       //button[contains(text(), 'APLICAR')]   
     Sleep                               2
+    #Click Element                       //button[contains(text(), 'APLICAR')]   
+    #Sleep                               2
+    Wait Until Element Is Visible       (//div[@class='checkbox'])[last()] 
+    Sleep                               2
+    Click Element                       (//div[@class='checkbox'])[last()] 
+    Sleep                               2
+    Wait Until Element Is Visible       //div[@class='calendar']
+    Click Element                       //label
+    Click Element                       //button[contains(text(), 'APLICAR')]  
+    Sleep                               2
     Click Element                       //button[contains(text(), 'APLICAR')]   
     Sleep                               2
+    Click Element                       //button[contains(text(), 'APLICAR')] 
+    Sleep                               2
+
 ###################### FASTSHOP - ENDEREÇO
 E entro na página de acionar um novo endereço a mesma é carregada 
     Wait Until Element Is Visible       ${BUTTON_CONTINUAR_COMPRA_VERDE}            10
@@ -117,9 +184,21 @@ E entro na página de acionar um novo endereço a mesma é carregada
     Set Focus To Element                ${A_ADICIONAR_NOVO_ENDERECO}
     Capture Page Screenshot
     Click Element                       ${A_ADICIONAR_NOVO_ENDERECO}
+    Wait Until Element Is Visible       ${ID_ENDEREÇO_CEP}
+    ${NOMEFAKE}                         FakerLibrary.Name
+    ${ENDERECOFAKE}                     FakerLibrary.Address
+    ${TELEFONEFAKE}                     FakerLibrary.Phone Number
+    Input Text                          ${INPUT_ENDEREÇO_NOME_DESTINATARIO}         ${NOMEFAKE}                       
+    Input Text                          ${ID_ENDEREÇO_CEP}                          00000000             
+    Input Text                          ${ID_ENDEREÇO_NOME_DA_RUA}                  ${ENDERECOFAKE}     
+    Input Text                          ${ID_ENDEREÇO_NUMERO}                       84     
+    Input Text                          ${ID_ENDEREÇO_COMPLEMENTO}                  Teste
+    Input Text                          ${ID_ENDEREÇO_BAIRRO}                       Centro
+    Input Text                          ${ID_ENDEREÇO_CIDADE}                       Guarulhos                   
+    Input Text                          ${ID_ENDEREÇO_TELEFONE}                     11${TELEFONEFAKE}   
+    Select From List By Value           ${ID_ENDEREÇO_TIPO_CASA}                    1
+    Select From List By Value           ${ID_ENDEREÇO_ESTADO}                       SP
     Sleep                               4
-    Input Text          ${INPUT_ENDEREÇO_NOME_DESTINATARIO}           aaaaaaaaaaaaaa
-    Sleep                               2
 
 ###################### FASTSHOP - INSERIR PRODUTO NO CARRINHO COM SEGURO PAGANDO VIA CARTÃO DE CRÉDITO
 Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada com pagamento via cartão de crédito
@@ -208,6 +287,7 @@ Então o produto ${busca_produto} ${busca_produto_dois} são adicionados, verifi
     Click Element                       ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}
     Sleep                               3
 
+
 #Login com sucesso
 Quando logo com o usuário ${usuario_existente} e insiro a sua senha válida ${senha_valida}
     Go To                                   ${BASE_URL}web/login
@@ -238,7 +318,13 @@ Entao será apresentada a mensagem que o cpf é inválido ${mensagem_login_cpf_i
     Element Text Should Be                  ${DIV_CPF_INVALIDO}                    ${mensagem_login_cpf_invalido}
     Capture Page Screenshot
 
-
+#LOGOUT
+E ao clicar em sair o nome ${nome_cliente_logado} não está presente no canto superior direito da tela. 
+    Click Element                           ${A_NOME_CLIENTE_LOGADO}          
+    Sleep                                   2      
+    Click Element                           ${A_LOGOUT}               
+    Capture Page Screenshot
+    Sleep                                   4
 
 #CADASTRO
 Dado que acesso e verifico que estou na página inicial da FastShop
