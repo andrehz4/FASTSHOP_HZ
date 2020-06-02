@@ -1,3 +1,5 @@
 robotframework
 robotframework-seleniumlibrary
-#robotframework-screencaplibrary
+robotframework-requests
+robotframework-screencaplibrary
+robotframework-fakerCopy 

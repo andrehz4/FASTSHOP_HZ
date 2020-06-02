@@ -334,6 +334,7 @@ Dado que acesso e verifico que estou na página inicial da FastShop
 
 Quando acesso e verifico que estou na página de cadastro, insiro um cpf não existente
     Go To                                   ${URL_CADASTRO_API}
+    Wait Until Element Is Visible           ${check_informe_Cpf_nao_cadastro}                    60 
     ${CPF}                                  FakerLibrary.cpf                           
     Input Text                              ${check_informe_Cpf_nao_cadastro}                    ${CPF} 
     Click Element                           ${check_botao_verde_continuar}
@@ -453,13 +454,20 @@ Dado que a primeira etapa de cadastro foi realizada com sucesso
     Então ao clicar em continuar a primeira etapa do cadastrado é encerrada com sucesso
 
 
-Quando é preenchido o campo de endereço, todas as informações são recebidas 
+E é preenchido o campo de endereço, todas as informações são recebidas 
     Set Selenium Speed                      0.5
     Input Text                              ${check_cadastro_cep}                    07110040
     Select From List By Value               ${check_cadastro_select_imovel}          1
     Input Text                              ${check_cadastro_numero_casa}            84
     Select From List By Value               ${check_cadastro_select_imovel}          1
     Input Text                              ${check_cadastro_complemento}            teste
+    Set Focus To Element                    ${check_botao_verde_cadastrar}
+    Element Text Should Be  	            ${check_botao_verde_cadastrar}          Cadastrar
+    Set Selenium Speed                      0.5
+    Click Element                           ${check_botao_verde_cadastrar}  
+    Set Selenium Speed                      0
+        Sleep                               10
+    Capture Page Screenshot
     
 Então os campos são verificados se não são editáveis
     Set Selenium Speed                      0.5
@@ -512,3 +520,118 @@ Exemplos diversos
   ...                         Cor Aleatório: ${CORFAKE}   Cartão de Crédito Aleatório: ${CARTAODECREDITOFAKE}
   ...                         Palavra Aleatória: ${PALAVRAFAKE}
   Log Many    @{OUTROS}
+
+###################### FASTSHOP - INSERIR PRODUTO EM FAVORITOS
+Dado que acesso e verifico que estou no site da FASTSHOP e realizo o login com o cpf ${cpf} e a senha ${senha}
+    Delete All Cookies
+    Go To                               ${URL_FAVORITOS}
+    Wait Until Element Is Visible       ${ID_LOGIN_CPF}                             30
+    Input Text	                        ${ID_LOGIN_CPF}                             ${cpf}
+    Input Text	                        ${ID_LOGIN_SENHA}                           ${senha}
+    Click Element                       ${BUTTON_CONFIRMAR_VERDE} 
+    Capture Page Screenshot
+    
+
+Quando quero add em favoritos preencho o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
+    Go To                               ${BASE_URL}web/p/d/${busca_produto}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot
+
+Quando acesso a vitrine quero add em favoritos preencho o campo de busca ${busca_produto}, verifico se o mesmo é retornado na lista
+    Go To                               ${BASE_URL}web/s/${busca_produto}
+    Wait Until Element Is Visible       ${BUTTON_FAVORITOS}                         20
+    Set Focus To Element                ${BUTTON_FAVORITOS}
+        Capture Page Screenshot
+    Click Element                       ${BUTTON_FAVORITOS}
+        Sleep                           3
+
+
+Então em favoritos o produto ${busca_produto} é adicionado e verificado que ele está no carrinho 
+    Go To                               ${URL_FAVORITOS}
+    Wait Until Element Is Visible       //div[@class='prd'][contains(text(), '${busca_produto}')]           10 
+    Capture Page Screenshot  
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto}')]//..//button 
+    Capture Page Screenshot
+
+Quando quero add em favoritos cinco prudutos então preencho o campo de busca ${busca_produto},${busca_produto_dois},${busca_produto_tres},${busca_produto_quatro},${busca_produto_cinco} verifico se o mesmo é retornado na lista
+    Go To                               ${BASE_URL}web/p/d/${busca_produto}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot
+    Go To                               ${BASE_URL}web/p/d/${busca_produto_dois}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_dois} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot
+        Go To                               ${BASE_URL}web/p/d/${busca_produto_tres}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_tres} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot
+        Go To                               ${BASE_URL}web/p/d/${busca_produto_quatro}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_quatro} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot
+        Go To                               ${BASE_URL}web/p/d/${busca_produto_cinco}/teste
+    Wait Until Element Is Visible       ${SPAN_ADICIONAR_AO_CARRINHO}               20
+    ${PRODUTO}=                         Get Text                                    ${H1_NOME_DO_PRODUTO}
+    Set Global Variable                 ${PRODUTO}
+    Log                                 ${PRODUTO}     
+    Element Text Should Be              ${H2_NOME_DO_PRODUTO}                       ${busca_produto_cinco} 
+    Set Focus To Element                ${BUTTON_LISTA_DE_FAVORITOS}
+    Click Element                       ${BUTTON_LISTA_DE_FAVORITOS}
+        Sleep                           3
+    Capture Page Screenshot    
+
+Então em favoritos os produtos em favoritos ${busca_produto},${busca_produto_dois},${busca_produto_tres},${busca_produto_quatro},${busca_produto_cinco} são adicionados e verificados que estão no carrinho 
+    Go To                               ${URL_FAVORITOS}
+    Wait Until Element Is Visible       //div[@class='prd'][contains(text(), '${busca_produto}')]           10 
+    Set Focus To Element                //div[@class='prd'][contains(text(), '${busca_produto}')]//..//button 
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto}')]//..//button 
+        Sleep                           3
+        Capture Page Screenshot
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto_dois}')]//..//button 
+        Set Focus To Element            //div[@class='prd'][contains(text(), '${busca_produto_dois}')]//..//button
+        Sleep                           3
+        Capture Page Screenshot
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto_tres}')]//..//button 
+        Set Focus To Element            //div[@class='prd'][contains(text(), '${busca_produto_tres}')]//..//button 
+        Sleep                           3
+        Capture Page Screenshot
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto_quatro}')]//..//button 
+        Set Focus To Element            //div[@class='prd'][contains(text(), '${busca_produto_quatro}')]//..//button 
+        Sleep                           3
+        Capture Page Screenshot
+    Click Element                       //div[@class='prd'][contains(text(), '${busca_produto_cinco}')]//..//button 
+        Set Focus To Element            //div[@class='prd'][contains(text(), '${busca_produto_cinco}')]//..//button
+        Sleep                           3
+        Capture Page Screenshot

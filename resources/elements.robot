@@ -64,6 +64,11 @@ ${DIV_CPF_INVALIDO}                                   //div[@class='invalid-feed
 ${P_MENSSAGEM_ERRO_LOGIN}                             //p[contains(text(), ' Entre ou ')]
 ${A_LOGOUT}                                           //a[@class='logout']
 
+### FAVORITOS
+${BUTTON_LISTA_DE_FAVORITOS}                          //div[@class='col-6 p-0']//button[@class='btn-wish-list']
+${URL_FAVORITOS}                                      http://webapp2-qa.fastshop.com.br/web/checkout-v2/favoritos
+${BUTTON_FAVORITOS}                                   //button[@class='btn-wish-list']
+                      
 
 ### Cadastro API
 ${URL_CADASTRO_API}                         http://webapp2-qa.fastshop.com.br/web/checkout/cadastro  
@@ -101,3 +106,4 @@ ${check_icone_validador_verde_bairro}       //span[contains(text(),'Bairro')]//.
 ${check_icone_validador_verde_cidade}       //span[contains(text(),'Cidade')]//..//i[@class='validation-icon']  
 ${check_icone_validador_verde_estado}       //span[contains(text(),'Estado')]//..//i[@class='validation-icon']
 ${check_icone_validador_verde_imovel}       //span[contains(text(),'Tipo de Imóvel')]//..//i[@class='validation-icon']         
+${check_botao_verde_cadastrar}              //button[contains(text(), 'Cadastrar')]

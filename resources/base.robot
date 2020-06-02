@@ -5,6 +5,7 @@ Library     Collections
 Library     ScreenCapLibrary
 Library     FakerLibrary    locale=pt_BR
 Resource    elements.robot
+Resource    services.robot
 Resource    setup_hz.robot
 
 *** Variables ***
@@ -28,4 +29,7 @@ End Session
 End Test
     Capture Page Screenshot	
     
+    
+End Test product
+    Capture Page Screenshot	
     
