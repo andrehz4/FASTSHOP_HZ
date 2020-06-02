@@ -15,14 +15,38 @@ Suite Teardown   End Session
 Test Teardown    End Test
 
 
-*** Test Cases ***        
+*** Test Cases ***    
+INSERIR UM PRODUTO NO CARRINHO SEM SERVIÇO
+    [Template]                  Busca, verificação e adição ao carrinho de um item no site da FASTSHOP
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    PANAF160B5W1  		                    
+
+EXCLUIR UM PRODUTO NO CARRINHO
+    [Template]                  Excluir produto sem serviço no carrinho quando existe só um produto
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    PANAF160B5W1  		                    
+
+CONCLUIR UMA COMPRA
+    [Template]                  Busca, verificação e adição no carrinho e conclusão da compra de um item sem serviço no site da FASTSHOP
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    PANAF160B5W1  		                    
+
+INSERIR UM PRODUTO NO CARRINHO COM SERVIÇO PAGAMENTO BOLETO
+    [Template]                  Busca, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    PANAF160B5W1  		  
+	
+INSERIR UM PRODUTO NO CARRINHO COM SERVIÇO PAGAMENTO CARTÃO DE CRÉDITO
+    [Template]                  Busca, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço e pagamento no cartão de crédito
+
+    #CPF                        #Senha                      #Produto                                                       
+    941.861.830-31              12345678                    PANAF160B5W1  		
+
 INSERIR DOIS PRODUTOS NO CARRINHO COM SERVIÇO 
     [Template]                  Busca de dois produtos, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço
 
     #CPF                        #Senha                      #Produto                    #Produto2                                                       
     941.861.830-31              12345678                    8S311310222PTO              PANAF160B5W1  
-
-
 
 
 
@@ -69,6 +93,7 @@ Busca de dois produtos, verificação e adição ao carrinho de um item no site 
     Quando um segundo produto é preenchido no campo de busca${busca_produto_dois}, verifico se o mesmo é retornado na lista
     E adiciono um serviço
     Então o produto ${busca_produto} é adicionado, verificado que está no carrinho e a compra é encerrada    
+    
 
 Busca, verificação e adição ao carrinho de um item no site da FASTSHOP com serviço e pagamento no cartão de crédito
     [Arguments]                 ${cpf}                  ${senha}                    ${busca_produto}                   

@@ -14,7 +14,7 @@ Test Teardown    End Test
 LOGIN COM SUCESSO
     [Template]                  Login com sucesso
     #CPF                        #Senha                      #Nome                                                       
-    34611974839                 teste                       Andre                    
+    941.861.830-31              12345678                    Teste                    
 
 LOGIN COM DADOS INVÁLIDOS
     [Template]                  Realizar login com dados inválidos
