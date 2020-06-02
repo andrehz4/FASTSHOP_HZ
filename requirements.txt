@@ -2,4 +2,4 @@ robotframework
 robotframework-seleniumlibrary
 robotframework-requests
 robotframework-screencaplibrary
-robotframework-fakerlibrary
+robotframework-faker
