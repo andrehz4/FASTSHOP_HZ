@@ -344,6 +344,12 @@ Quando verifico que estou na página de cadastro, insiro um cpf já existente "$
     Input Text                              ${check_informe_Cpf}                    ${Cpf_cadastrado}
     Click Element                           ${check_botao_verde_continuar}
 
+Quando verifico que estou na página de cadastro, insiro um cpf inexistente ${Cpf_invalido}
+    Go To                                   ${URL_CADASTRO_API}
+    Wait Until Element Is Visible           ${check_informe_Cpf_nao_cadastro}                    60                          
+    Input Text                              ${check_informe_Cpf_nao_cadastro}                    ${Cpf_invalido} 
+    Click Element                           ${check_botao_verde_continuar}
+
 E o campo de senha é exibido e a senha é inserida   
     ${label}=                               Get WebElement                          ${check_label_senha_na_fastshop}
     Should Contain                          ${label.text}                           Senha na Fast Shop
@@ -398,7 +404,31 @@ E todos os campos da tela de cadastro são preenchidos
     ${PASSWORDFAKE}                         FakerLibrary.Password 
     Input Text                              ${check_cadastro_senha}                  ${PASSWORDFAKE}   
     Input Text                              ${check_cadastro_confirmacao_senha}      ${PASSWORDFAKE}   
-    
+
+E os campos da tela de cadastro são preenchidos, porém com dados inválidos ${nome} ${data_de_nascimento} ${genero} ${telefone} ${email} ${senha} ${senha_dois} 
+    Input Text                              ${check_cadastro_nome}                   ${nome}  
+    Input Text                              ${check_cadastro_idade}                  ${data_de_nascimento}    
+    Select From List By Value               ${check_cadastro_sexo}                   ${genero}    
+    Input Text                              ${check_cadastro_telefone}               11${telefone}              
+    Input Text                              ${check_cadastro_email}                  ${email}
+    Input Text                              ${check_cadastro_senha}                  ${senha}   
+    Input Text                              ${check_cadastro_confirmacao_senha}      ${senha_dois}   
+        Capture Page Screenshot
+
+
+E todos os campos da primeira tela de cadastro estão em branco
+    ${NOMEFAKE}                             FakerLibrary.Name
+    Input Text                              ${check_cadastro_nome}                   ${EMPTY}  
+    Input Text                              ${check_cadastro_idade}                  ${EMPTY}    
+    ${TELEFONEFAKE}                         FakerLibrary.Phone Number
+    Input Text                              ${check_cadastro_telefone}               ${EMPTY}     
+    ${PALAVRAFAKE}                          FakerLibrary.Word            
+    Input Text                              ${check_cadastro_email}                  ${EMPTY}
+    ${PASSWORDFAKE}                         FakerLibrary.Password 
+    Input Text                              ${check_cadastro_senha}                  ${EMPTY}  
+    Input Text                              ${check_cadastro_confirmacao_senha}      ${EMPTY}  
+    Capture Page Screenshot
+   
 E é autorizado apenas o recebimento de ofertas via SMS
     Set Focus To Element                    ${check_cadastro_recebe_sms}
     Set Selenium Speed                      0.1            
@@ -467,6 +497,33 @@ E é preenchido o campo de endereço, todas as informações são recebidas
     Click Element                           ${check_botao_verde_cadastrar}  
     Set Selenium Speed                      0
         Sleep                               10
+    Capture Page Screenshot
+
+E não são preenchidos os campos de entrega da maneira correta ${cep} ${tipo_imovel} ${numero_imovel} ${complemento}          
+    Set Selenium Speed                      0.5
+    Input Text                              ${check_cadastro_cep}                    ${cep}
+    Select From List By Value               ${check_cadastro_select_imovel}          ${tipo_imovel}
+    Input Text                              ${check_cadastro_numero_casa}            ${numero_imovel}
+    Select From List By Value               ${check_cadastro_select_imovel}          ${tipo_imovel}
+    Input Text                              ${check_cadastro_complemento}            ${complemento}
+    Set Focus To Element                    ${check_botao_verde_cadastrar}
+    Element Text Should Be  	            ${check_botao_verde_cadastrar}          Cadastrar
+    Set Selenium Speed                      0.5
+    Click Element                           ${check_botao_verde_cadastrar}  
+    Set Selenium Speed                      0
+        Sleep                               5
+    Capture Page Screenshot
+
+
+E não são preenchidas as informações de endereço e clico em cadastrar
+    Set Selenium Speed                      0.5
+    Wait Until Element Is Visible           ${check_cadastro_cep}                    10
+    Set Focus To Element                    ${check_botao_verde_cadastrar}
+    Element Text Should Be  	            ${check_botao_verde_cadastrar}          Cadastrar
+    Set Selenium Speed                      0.5
+    Click Element                           ${check_botao_verde_cadastrar}  
+    Set Selenium Speed                      0
+        Sleep                               2
     Capture Page Screenshot
     
 Então os campos são verificados se não são editáveis
