@@ -7,7 +7,7 @@ Documentation      FASTSHOP - CADASTRO
 ...                Primeiro inserir o CPF ainda não cadastrado no site, deve ser feita a validação se esse CPF já está cadastrado, 
 ...                caso já esteja cadastrado deve aparecer o campo de senha.
 
-Resource           ../resources/base.robot
+Resource           ../../../resources/base.robot
 Suite Setup        Start Session
 Suite Teardown     End Session
 Test Teardown      End Test
@@ -16,17 +16,20 @@ Test Teardown      End Test
 *** Test Cases ***
 CADASTRO COM SUCESSO
     [Template]                  Cadastro com sucesso 
+    [Tags]                      CADASTRO1
     #CPF                        #Senha                      #Nome                                                       
-    941.861.830-31              12345678                    Teste       
+    263.929.870-45              12345678                    Teste       
 
       
 CPF INVÁLIDO - Cadastro com dados inválidos 
     [Template]                  CPF INVÁLIDO - Cadastro com dados inválidos 
+    [Tags]                      CADASTRO1
     #CPF                                                                            
     999.999.999-99     
 	
 FORMULÁRIO EM BRANCO
     [Template]              FORMULÁRIO EM BRANCO - Cadastro criar um usuario com dados inválidos                          
+    [Tags]                      CADASTRO1
     ${EMPTY}          
 
 FORMULÁRIO EM BRANCO DADOS DE ENTREGA      
@@ -35,51 +38,61 @@ FORMULÁRIO EM BRANCO DADOS DE ENTREGA
 
 APENAS O PRIMEIRO NOME - CADASTRO 
     [Template]                      CADASTRO APENAS COM O PRIMEIRO NOME - Cadastro criar um usuario com dados inválidos
+    [Tags]                      CADASTRO1
     #NOME     #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     André     03061986                  Male          987488175     teste@fastshoptes.com   12345678    12345678    
 
 DATA DE NASCIMENTO INVÁLIDA 
     [Template]                      DATA INVÁLIDA - Cadastro criar um usuario com dados inválidos
+    [Tags]                      CADASTRO1
     #NOME               #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     Teste Automatico     03060000                 Male          987488175     teste@fastshoptes.com   12345678    12345678      
 	
 TELEFONE INCOMPLETO - Cadastro criar um usuario com dados inválidos 
     [Template]                      TELEFONE INCOMPLETO - Cadastro criar um usuario com dados inválidos
+    [Tags]                      CADASTRO1
     #NOME               #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     Teste Automatico    03061985                  Male          9874          teste@fastshoptes.com   12345678    12345678            
 
 E-MAIL INVÁLIDO - Cadastro criar um usuario com dados inválidos                             
     [Template]                      E-MAIL INVÁLIDO - Cadastro criar um usuario com dados inválidos                             
+    [Tags]                      CADASTRO1
     #NOME               #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     Teste Automatico    03061986                  Male          987488175     testefastshoptes.com   12345678    12345678            
 
 SENHA MENOR QUE 8 CARACTERES - Cadastro criar um usuario com dados inválidos                                
     [Template]                      SENHA MENOR QUE 8 CARACTERES - Cadastro criar um usuario com dados inválidos                                             
+    [Tags]                      CADASTRO1
     #NOME               #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     Teste Automatico    03061986                  Male          987488175     teste@fastshoptes.com   1234567     1234567            
  	
 SENHAS DIFERENTES - Cadastro criar um usuario com dados inválidos                                
     [Template]                      SENHAS DIFERENTES - Cadastro criar um usuario com dados inválidos                                          
+    [Tags]                      CADASTRO1
     #NOME               #DATA DE NASCIMENTO       #GENERO       #TELEFONE     #EMAIL                  #SENHA      #SENHA2
     Teste Automatico    03061986                  Male          987488175     teste@fastshoptes.com   12345678    12345679            
 
 CEP INCOMPLETO - Cadastro criar um usuario com dados inválidos                              
     [Template]                            CEP INCOMPLETO - Cadastro criar um usuario com dados inválidos                                                                        
+    [Tags]                      CADASTRO1
     #CEP        #TIPO DE IMÓVEL           #NÚMERO DO IMÓVEL     #COMPLEMENTO
     0711004     1                         84                    APARTAMENTO                 
 
 CEP INVÁLIDO - Cadastro criar um usuario com dados inválidos
     [Template]                            CEP INVÁLIDO - Cadastro criar um usuario com dados inválidos                                                                        
+    [Tags]                      CADASTRO1
     #CEP        #TIPO DE IMÓVEL           #NÚMERO DO IMÓVEL     #COMPLEMENTO
     00000000    1                         84                    APARTAMENTO                 
 
 COMPLEMENTO MAIOR QUE 20 CARACTERES - Cadastro criar um usuario com dados inválidos
     [Template]                            COMPLEMENTO MAIOR QUE 20 CARACTERES - Cadastro criar um usuario com dados inválidos                                                                        
+    [Tags]                      CADASTRO1
     #CEP        #TIPO DE IMÓVEL           #NÚMERO DO IMÓVEL     #COMPLEMENTO
     07110040    1                         84                    12345678910111213141516171819201234567891011121314151617181920                 
 
 CEP MAIOR QUE 8 CARACTERES - Cadastro criar um usuario com dados inválidos
     [Template]                            CEP MAIOR QUE 8 CARACTERES - Cadastro criar um usuario com dados inválidos                                                                       
+    [Tags]                      CADASTRO1
     #CEP            #TIPO DE IMÓVEL           #NÚMERO DO IMÓVEL     #COMPLEMENTO
     071100400000    1                         84                    APARTAMENTO                 
 

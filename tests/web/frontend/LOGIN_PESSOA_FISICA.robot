@@ -4,7 +4,7 @@ Documentation      FASTSHOP - REALIZAR LOGIN
 ...                Edwin deseja acessar o site da Fastshop
 ...                Para que ele possa navegar e realizar compras no website
 
-Resource         ../resources/base.robot
+Resource         ../../../resources/base.robot
 Suite Setup      Start Session
 Suite Teardown   End Session
 Test Teardown    End Test
@@ -13,23 +13,26 @@ Test Teardown    End Test
 *** Test Cases ***
 LOGIN COM SUCESSO
     [Template]                  Login com sucesso
+    [Tags]                      LOGIN1
     #CPF                        #Senha                      #Nome                                                       
-    941.861.830-31              12345678                    Teste                    
+    14756029876                  12345678                        Daniel                    
 
-LOGIN COM DADOS INVÁLIDOS
+LOGIN COM SENHA INCORRETA
     [Template]                  Realizar login com dados inválidos
+    [Tags]                      LOGIN2
     #CPF                        #Senha                      #Mensagem de falha                                                       
-    941.861.830-31              123456789                   Login ou senha inválidos 
-    941.861.830-31              1234568                     Login ou senha inválidos 
+    941.861.830-31              123456789                   Senha incorreta
+    941.861.830-31              1234568                     Senha incorreta 
 
 LOGIN COM CPF INVÁLIDO
     [Template]                  Realizar login com CPF inválido
+    [Tags]                      LOGIN3  
     #CPF                        #Senha                      #Mensagem de falha     
-    941.861.830-32              12345678                    Informe um CPF válido 
-    941.861.830-36              12345678                    Informe um CPF válido 
+    941.861.830-32              12345678                    Informe um CPF ou CNPJ válido
+    941.861.830-36              12345678                    Informe um CPF ou CNPJ válido 
     
 LOGIN COM CAMPOS EM BRANCO
-    [tags]              Prioridade alta
+    [Tags]                      LOGIN4
     [Template]                  Realizar login com CPF inválido   
     #CPF                        #Senha                      #Mensagem de falha     
     ${EMPTY}                    12234344                    Campo obrigatório  

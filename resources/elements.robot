@@ -2,20 +2,29 @@
 Resource         ../resources/setup_hz.robot
 
 *** Variables ***
-### Busca Produto
+#BUSCA PRODUTO
+${ID_ACEITAR_COOKIES}                                 id:onetrust-accept-btn-handler
 ${INPUT_BUSCA_PRODUTO}                                id:inpHeaderSearch
 ${SPAN_LUPA_BUSCA_PRODUTO}                            id:btnHeaderSearch
 ${BUTTON_SELECIONAR_SERVICO}                          //button[contains(text(), 'Selecionar')]
-${H2_NOME_DO_PRODUTO}                             	  //h2[@class='product-detail-partnumber']
-${H1_NOME_DO_PRODUTO}                                 //h2[@class='product-detail-partnumber']//..//h1
-${A_ADICIONAR_NOVO_ENDERECO}                          //a[@class='btn btn-new-address']  
-${SPAN_ADICIONAR_AO_CARRINHO}                         //span[@class='lb-add-cart']
-${BUTTON_CONTINUAR_COMPRA_VERDE}                      //span[contains(text(), ' Subtotal ')]//..//button[contains(text(), 'Continuar compra')]  
+${H2_NOME_DO_PRODUTO}                             	  //div[@class='info d-md-flex']//span
+${H1_NOME_DO_PRODUTO}                                 //div[@class='content']//..//h1
+${A_ADICIONAR_NOVO_ENDERECO}                          //button[@class='btn btn-new-address']  
+${P_NAO_SEI_MEU_ENDERECO}                             //p[contains(text(), 'Não sei meu CEP')]
+${BUTTON_CONHECA_NOSSO_FRETE}                         //button[contains(text(), 'Conheça nosso frete')]
+${INPUT_DIGITE_SEU_CEP}                               //input[@placeholder='Digite seu CEP']
+${BUTTON_ADICIONAR_AO_CARRINHO}                       //button[contains(text(), 'Adicionar ao carrinho')]
+${SPAN_ADICIONAR_AO_CARRINHO}                         //span[contains(text(), 'Adicionar ao carrinho')]
+${SPAN_CUPOM_CARRINHO}                                //span[@class='coupon-placeholder']
+${BUTTON_CONTINUAR_COMPRA_VERDE}                      (//span[contains(text(), ' Subtotal ')]//..//button[contains(text(), 'Continuar compra')])[last()]
 ${BUTTON_CONTINUAR_VERDE_ENDERECO}                    (//button[contains(text(), 'Continuar')])[last()]   
-${DIV_QUANDO_RECEBER}                                 //div[contains(text(), 'Quando deseja receber?')]  
+${DIV_QUANDO_RECEBER}                                 //h1[contains(text(), 'Quando deseja receber?')]  
 ${H1_ADICIONAR_SERVICO}                               //h1[contains(text(), 'Deseja adicionar algum serviço?')] 
 ${H1_COMO_DESEJA_PAGAR}                               //h1[contains(text(), 'Como deseja pagar?')] 
 ${DIV_ADD_CARTAO_DE_CREDITO}                          //div[contains(text(), ' Adicionar Cartão de Crédito ')] 
+${LABEL_PAGAR_VIA_BOLETO}                             //div[contains(text(), 'Boleto')]//..//..//label
+${LABEL_PAGAR_VIA_LISTA_DE_CASAMENTO}                 //div[contains(text(), 'Crédito de Lista de Casamento')]//..//..//label
+${LABEL_PAGAR_VIA_CARTAO_DE_CREDITO}                  //div[contains(text(), 'Cartão de Crédito')]//..//..//label
 ${BUTTON_CONTINUAR_VERDE_DADOS_PESSOAIS}              (//button[contains(text(), 'Continuar')])[last()]   
 ${BUTTON_CONTINUAR_VERDE_SERVICOS}                    (//button[contains(text(), 'Continuar')])[last()]  
 ${BUTTON_CONTINUAR_VERDE_PAGAMENTO}                   (//button[contains(text(), 'Continuar')])[last()] 
@@ -24,11 +33,15 @@ ${BUTTON_CONTINUAR_VERDE_FINALIZAR_COMPRA}            (//button[contains(text(),
 ${DIV_DESCRICAO_DO_PAGAMENTO}                         //div[@class='invoice-description']
 ${CARRINHO_URL}                                       http://webapp2-qa.fastshop.com.br/web/checkout-v2/carrinho  
 ${DIV_COMPRA_CONCLUIDA}                               //div[contains(text(), 'Você receberá no e-mail')]  
+${A_BOTÃO_COMPRA_CONCLUIDA_OK_ENTENDI}                //a[@class='btn btn-success']
+${DIV_EXCLUIR_FAVORITOS}                               //div[@class='delete']  
 ${DIV_EXCLUIR_PRODUTO}                                //div[@class='remove']  
 ${P_CARRINHO_VAZIO}                                   //p[@class='alert-text'][contains(text(), 'Seu carrinho está vazio.')]
 ${DIV_NOME_DO_PRODUTO}                                //div[@class='row']//span[1]
 ${LABEL_PERIODO_DO_SEGURO}                            //span[contains(text(), '+')]//..//..//label  
 ${BUTTON_APLICAR_SEGURO}                              //button[contains(text(), 'APLICAR')]        
+
+#PAGAMENTO
 ${DIV_NOME_DO_TITULAR_DO_CARTAO}                      //div[contains(text(), 'NOME DO TITULAR')]  
 ${INPUT_NUMERO_CARTAO_DE_CREDITO}                     id:cardNumber                     
 ${INPUT_NOME_TITULAR_DO_CARTAO}                       id:holderName
@@ -38,8 +51,46 @@ ${DIV_PAGAMENTO_CARTAO_JUROS}                         //div[contains(text(), ' J
 ${DIV_PAGAMENTO_PARCELAMENTO}                         //div[@class='select-items'] 
 ${DIV_PAGAMENTO_CVV}                                  //input[@formcontrolname='cvv']
 ${LABEL_PAGAMENTO_PARCELADO}                          //div[@class='box-virtual-select']
-${DIV_PAGAMENTO_LISTA_1x}                             //div[contains(text(), '1x iguais')]    
+${DIV_PAGAMENTO_LISTA_A_VISTA}                        //div[contains(text(), 'À vista')]   
+${DIV_PAGAMENTO_PARCELADO}                            //div[contains(text(), '3x iguais*')]  
+${DIV_ICONE_CONDICAO_ESPECIAL}                        //div[contains(text(), 'Condição especial')]  
+${DIV_PAGAMENTO_CONDICAO_ESPECIAL_1x}                 //div[contains(text(), '1x')]             
+${DIV_PAGAMENTO_LISTA_1x}                             //div[contains(text(), '1x')]   
+${DIV_PAGAMENTO_LISTA_2x}                             //div[contains(text(), '2x iguais')]    
 ${DIV_PAGAMENTO_LISTA_3x}                             //div[contains(text(), '3x iguais')]  
+#2 cartões
+${LABEL_PAGAR_DOIS_CARTOES_DE_CREDITO}                //div[contains(text(), '2 Cartões de Crédito')]//..//..//label
+${LABEL_VALOR_PRIMEIRO_CARTAO}                        //label//input
+${DIV_SEGUNDO_CARTAO}                                 //div[@class='subtitle'][contains(text(), ' 2° cartão ')] 
+${BUTTON_IR_PARA_O_SEGUNDO_CARTAO}                    (//button[contains(text(), 'Ir para o 2° cartão')])[last()]
+#Lista de casamento
+${INPUT_VALOR_DA_LISTA}                                //input[@formcontrolname='valueToPay']
+${SPAN_VALOR_SUBTOTAL}                                 //span[@class='subtotal-value']
+
+#CUPOM
+${INPUT_CUPOM_CARRINHO}                                //input[@formcontrolname='code']
+${BUTTON_CONFIRMAR_CUPOM_CARRINHO}                     id:coupon_btn
+${P_MENSAGEM_CUPOM_ADICIONADO_COM_SUCESSO}             //div[@class='notification']/./p[contains(text(), 'Cupom aplicado aos produtos elegíveis.')] 
+${DIV_ICONE_DELETAR_CUPOM}                             //div[@class='coupon-remove']
+${P_MENSAGEM_CUPOM_EXCLUIDO_DO_CARRINHO}               //div[@class='notification']/./p[contains(text(), 'Cupom excluído do carrinho.')] 
+${BASE_URL_API}                                        https://apiqa.fastshop.com.br
+
+#SERVIÇOS
+${DIV_SUPORTE_TECNICO}                                //div[@class='service-name']//span[contains(text(), 'Suporte técnico')]//..//..//div[@class='checkbox']  
+${DIV_PROTEÇÃO_DIGITAL}                                //div[@class='service-name']//span[contains(text(), 'Proteção Digital')]//..//..//div[@class='checkbox']
+${DIV_SEGURO}                                         //div[@class='service-name']//span[contains(text(), 'Seguro')][1]//..//..//div[@class='checkbox']   
+${DIV_SEGURO_QUEBRA_ACIDENTAL}                        //div[@class='service-name']//span[contains(text(), 'Seguro e Quebra Acidental')]//..//..//div[@class='checkbox']  
+${DIV_GARANTIA_ESTENDIDA}                             //div[@class='service-name']//span[contains(text(), 'Garantia Estendida')]//..//..//div[@class='checkbox']  
+${DIV_INSTALAÇÃO}                                     //div[@class='service-name']//span[contains(text(), 'Instalação e orientação de uso')]//..//..//div[@class='checkbox']  
+${BUTTON_SERVICO_REMOVE}                              //div[@class='box-service']//button[@class='remove space']
+${BUTTON_APLICAR_SERVICO}                             //button[contains(text(), 'APLICAR')]
+${BUTTON_ALTERAR_ENTREGA}                             //button[contains(text(), 'Alterar')]
+${BUTTON_REMOVE}                                      //button[@class='remove']
+${LI_QUANTIDADE_2}                                    //li[contains(text(), '2')] 
+${LI_QUANTIDADE_3}                                    //li[contains(text(), '3')] 
+${LI_QUANTIDADE_4}                                    //li[contains(text(), '4')] 
+${LI_QUANTIDADE_5}                                    //li[contains(text(), '5')]      
+
 
 #ENDEREÇO
 ${INPUT_ENDEREÇO_NOME_DESTINATARIO}                   //input[@formcontrolname='name']
@@ -58,21 +109,21 @@ ${BUTTON_SALVAR_ENDERÇO}                              //button[contains(text(),
 ${ID_LOGIN_CPF}                                       id:document
 ${ID_LOGIN_SENHA}                                     id:password
 ${BUTTON_CONFIRMAR_VERDE}                             //button[@class='btn btn-green']   
-${A_NOME_CLIENTE_LOGADO}                              //a[contains(text(), 'Teste')] 
+${A_NOME_CLIENTE_LOGADO}                              //a[contains(text(), 'Daniel')] 
 ${P_MENSSAGEM_ERRO_LOGIN}                             //p[@class='err-msg']
 ${DIV_CPF_INVALIDO}                                   //div[@class='invalid-feedback']
 ${P_MENSSAGEM_ERRO_LOGIN}                             //p[contains(text(), ' Entre ou ')]
 ${A_LOGOUT}                                           //a[@class='logout']
 
 ### FAVORITOS
-${BUTTON_LISTA_DE_FAVORITOS}                          //div[@class='col-6 p-0']//button[@class='btn-wish-list']
+${BUTTON_LISTA_DE_FAVORITOS}                          //div[@class='user']//a[@class='favorite-icon']
 ${URL_FAVORITOS}                                      http://webapp2-qa.fastshop.com.br/web/checkout-v2/favoritos
 ${BUTTON_FAVORITOS}                                   //button[@class='btn-wish-list']
                       
 
 ### Cadastro API
-${URL_CADASTRO_API}                         http://webapp2-qa.fastshop.com.br/web/checkout/cadastro  
-${url}                                      http://webapp2-qa.fastshop.com.br/web/checkout/cadastro
+${URL_CADASTRO_API}                         http://webapp2-qa.fastshop.com.br/web/cadastro  
+${url}                                      http://webapp2-qa.fastshop.com.br/web/cadastro
 ${check_informe_Cpf_nao_cadastro}           id:document
 ${check_informe_Cpf}                        id:inputUser
 ${check_botao_verde_continuar}              class:btn-green

@@ -5,7 +5,7 @@ Documentation      FASTSHOP - LISTA DE FAVORITOS
 ...                o cliente deseja incluir e excluir um produto da lista de favoritos
 ...                Para que ele possa guardar quais itens ele deseja comprar no futuro
 
-Resource         ../resources/base.robot
+Resource         ../../../resources/base.robot
 Suite Setup      Start Session
 Suite Teardown   End Session
 Test Teardown    End Test
@@ -14,22 +14,22 @@ Test Teardown    End Test
 *** Test Cases ***        
 INSERIR UM PRODUTO EM SUA PÁGINA NA LISTA DE FAVORITOS E EXCLUÍ-LO 
     [Template]                  Incluir produto acessando sua página do produto na lista de favoritos
-
+    [Tags]                      FAV1                        FAVPIPELINE1
     #CPF                        #Senha                      #Produto                                                                      
-    941.861.830-31              12345678                    PANAF160B5W1               
+    39748516075                 12345678                    PANAF160B5W1               
 
 INSERIR UM PRODUTO VIA VITRINE NA LISTA DE FAVORITOS E EXCLUÍ-LO 
     [Template]                  Incluir produto via vitrine na lista de favoritos
-
+    [Tags]                      FAV2                        FAVPIPELINE1
     #CPF                        #Senha                      #Produto                                                                      
-    941.861.830-31              12345678                    8S311310222PTO     
+    74902561867                 12345678                    8S311310222PTO     
 
 
 INSERIR CINCO PRODUTOS ACESSADO SUAS PÁGINAS NA LISTA DE FAVORITOS E EXCLUÍ-LOS 
     [Template]                  Incluir cinco produtos acessando a página dos produtos na lista de favoritos
-
+    [Tags]                      FAV3                        FAVPIPELINE1
     #CPF                        #Senha                      #Produto1       #Produto2          #Produto3            #Produto4        #Produto5                                                                       
-    941.861.830-31              12345678                    PANAF160B5W1    JBLCHARGE4VRMB     8S311310222PTO       EXDB84X1         LGCV7011WS42
+    31209586703                 12345678                    JBLGO2PTOB      SOXBR55X955GB      EXME41X2             JBLCHARGE4VRMB   EXDB84X1         
         
 
 
